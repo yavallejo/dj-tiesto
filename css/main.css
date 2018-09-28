@@ -5,6 +5,7 @@
     --main-bg-color: #FD275F;
     --main-bg-color-hover : #E35A78;
     --secundary-color: #53C7F0;
+    --blue-color: #060F20;
     --white-color: #ffffff;
     /* Fonts */
     --main-font-family: 'Saira', sans-serif;
@@ -307,6 +308,32 @@ a{
             max-width: 272px;
         }
     }
+
+
+.numberEvents{
+    background-color: var(--blue-color);
+    color:var(--white-color);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+    .numberEvents__item{
+        text-align: center;
+        letter-spacing: 1px;
+    }
+        .numberEvents__item h5{
+            color: var(--secundary-color);
+            font-family: var(--secundary-font-family);
+            font-weight: 400;
+            font-size:1.25rem;
+        }
+        .numberEvents__item h6{
+            font-size:3.125rem;
+            font-weight: 500;
+            font-family: var(--main-font-family);
+            margin-bottom: 0;
+            margin-top: 1rem;
+        }
 
 
 .sectionBorder:before{
