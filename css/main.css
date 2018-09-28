@@ -28,7 +28,6 @@ a{
 .show>.btn-primary.dropdown-toggle{
     background-color: var(--main-bg-color);
     border-color: var(--main-bg-color);
-    padding:0.8rem 1.5rem;
     border-radius:var(--border-radius);
 }
     .btn-primary:hover{
@@ -112,9 +111,7 @@ a{
     width: 100%;
     height: 100vh;
     font-family: var(--secundary-font-family);
-}
-
-    
+}   
 
     .header__btn{
         display: inline-block;
@@ -195,7 +192,78 @@ a{
                 }
             }
     
-    
+.presentations{
+    background-image: url("../img/bg_presentations.png");
+    width: 100%;
+    height: 100%;
+    background-size:cover;
+    background-position: center center;
+    color: var(--white-color);
+    padding-left:18px;
+    padding-right:18px;
+    padding-bottom:5rem;
+    padding-top:5rem;
+    position: relative;
+}
+
+    .presentations p{
+        color: var(--secundary-color);
+        font-family: var(--main-font-family);
+        font-size: 1.2rem;
+        max-width: 650px;
+        margin-right: -15px;
+        margin-left: -15px;
+        text-align: center;
+        
+    }
+        @media screen and (min-width:768px){
+           .presentation {
+               padding-left:0;
+               padding-right:0;
+           }
+           .presentations p{
+               text-align: left;
+               font-size: 1.4rem;
+               font-weight: 700;
+           } 
+        }
+
+    .presentations__details{
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        
+    }
+        .presentations__details:hover{
+            background-color: var(--main-bg-color);
+            cursor:none;
+        }
+
+        .presentations__details:hover a{
+            border-color:var(--white-color);
+        }
+        
+        .presentations__details--title{
+            text-transform: uppercase;
+            font-size:0.8rem;
+            font-weight: 500;
+            letter-spacing:3px;
+        }
+        .presentations__details--information{
+            font-family: var(--secundary-font-family);
+            font-size:0.8rem;
+            font-weight: 500;
+        }
+
+            @media screen and (min-width:768px){
+                .presentations__details--title{
+                    font-size:1.5rem; 
+                }
+                .presentations__details--information{
+                   font-size:1.75rem;
+                }
+            }
 
     .navbar-absolute{
         position: absolute;
@@ -238,4 +306,56 @@ a{
         .navbar-brand{
             max-width: 272px;
         }
+    }
+
+
+.sectionBorder:before{
+    position: absolute;
+    right: 0;
+    bottom:0;
+    width:10px;
+    height: 141px;
+    background-color:var(--main-bg-color);
+    content: "";
+}
+
+.title{
+    font-family: var(--main-font-family);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.86rem;
+    margin-bottom: 1.5rem;
+    margin-right: -15px;
+    margin-left: -15px;
+    text-align: center;
+}
+    .title:after{
+        max-width: 170px;
+        width: 100%;
+        background-color: var(--main-bg-color);
+        height: 3px;
+        content: " ";
+        display: block;
+        margin-left:auto;
+        margin-right: auto;
+    }
+
+    @media screen and (min-width:768px){
+        .title{
+            text-align: left;
+            font-size: 2.5rem;
+        }
+
+        .title:after{
+            margin-left:0;
+        }
+    }
+
+
+    .title--white{
+        color:var(--white-color);
+    }
+
+    .title--black{
+        color:#19112A;
     }
