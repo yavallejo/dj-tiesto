@@ -14,6 +14,7 @@
     /* Other Settings */
     --border-radius: 50px;
     --letter-spacing: 2px;
+    --padding-section: 5rem;
 
 
 }
@@ -109,8 +110,8 @@ a{
 }
 
 .djs{
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
     position: relative;
 }
     .djs__gallery{
@@ -133,6 +134,12 @@ a{
             color: #333333;
             
         }
+    
+    @media screen and (min-width:768px){
+        .djs__information p{
+            margin-top: 4rem;
+        }
+    }
 
 .header{
     background-image: url("../img/bg_header.png");
@@ -222,7 +229,14 @@ a{
                     font-size: 1.3rem;
                 }
             }
-    
+
+.list-square li::before{
+    content: "■";
+    color: var(--secundary-color);
+    margin-right: 10px;
+}
+
+
 .presentations{
     background-image: url("../img/bg_presentations.png");
     width: 100%;
@@ -232,8 +246,8 @@ a{
     color: var(--white-color);
     padding-left:18px;
     padding-right:18px;
-    padding-bottom:5rem;
-    padding-top:5rem;
+    padding-bottom:var(--padding-section);
+    padding-top:var(--padding-section);
     position: relative;
 }
 
@@ -342,8 +356,8 @@ a{
 .numberEvents{
     background-color: var(--blue-color);
     color:var(--white-color);
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
 }
 
     .numberEvents__item{
@@ -365,32 +379,95 @@ a{
         }
 
 
-    .sectionBorder--bottom:before{
-        right: 0;
-        bottom:0;
-        position: absolute;
-        width:10px;
-        height: 141px;
-        background-color:var(--main-bg-color);
-        content: "";
+.sectionBorder--bottom:before{
+    right: 0;
+    bottom:0;
+    position: absolute;
+    width:10px;
+    height: 141px;
+    background-color:var(--main-bg-color);
+    content: "";
+}
+
+.sectionBorder--top:after{
+    left:0;
+    top: 0;
+    position: absolute;
+    width:10px;
+    height: 141px;
+    background-color:var(--main-bg-color);
+    content: "";
+}
+
+.slick-slide{
+    margin-right: 1rem;    
+}
+
+.subtitle{
+    color: #53C7F0;
+    max-width: 400px;
+    font-size: 1.2rem;
+    margin-left: -15px;
+}
+
+.text--red{
+    color: var(--main-bg-color-hover);
+}
+
+.text--pink{
+    color: #E25ABC;
+}
+
+.text--purple{
+    color: #7E5AE2;
+}
+
+.tickets{
+    background-color: var(--blue-color);
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    box-sizing: border-box;
+    padding-left:15px;
+    padding-right:15px;
+}
+    @media screen and (min-width:768px){
+        .tickets{
+            padding-left:0;
+            padding-right:0;
+        }
+    }
+    .tickets__price{
+        background-color:#24243C;
+        color:var(--white-color);
+        text-align: center;
+        padding: 3rem;
+        margin:1rem;
+        transition:all .3s ease-out;
+    }
+        .tickets__price:hover{
+             background-color: var(--blue-color);
+        }
+
+    .tickets__value li{
+        margin-right:0.5rem;
     }
 
-    .sectionBorder--top:after{
-        left:0;
-        top: 0;
-        position: absolute;
-        width:10px;
-        height: 141px;
-        background-color:var(--main-bg-color);
-        content: "";
+    .tickets__number{
+        color: var(--secundary-color);
+        font-size:3rem;
+        font-weight: 500;
+        letter-spacing: var(--letter-spacing);
     }
+        .tickets__number:before{
+            content: "$"
+        }
 
-    .slick-slide{
-        margin-right: 1rem;
-       
-    }
+        .tickets__number:after{
+            content: "usd";
+            font-size:1rem;
+        }
 
-        
+
 
 .title{
     font-family: var(--main-font-family);

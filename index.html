@@ -239,7 +239,7 @@
                             </li>
                         </ul>                        
                     </div>
-                    <div class="col-md-3 text-center text-md-right order-0">
+                    <div class="col-md-3 text-center text-md-right order-0 djs__information">
                         <h2 class="title title--black title--small text-md-right">DJS</h2>
                         <p>Ellos son el verdadero foco de atención de nuestro evento</p>
                         <ul class="d-flex list-unstyled justify-content-center justify-content-md-end mb-4">
@@ -250,10 +250,66 @@
                                 <a href="javascript:void(0);" class="JS-slick-prev"><img src="img/icon_right_slick.png" alt=""></a>
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-primary mt-3 d-none d-md-inline">Ver Todos</a>
+                        <a href="#" class="btn btn-primary d-none mt-5 d-md-inline-block">Ver Todos</a>
                     </div>
                 </article>
             </div>
+        </section> <!--End DJS-->
+        <section class="tickets">
+            <article class="container">
+                <h2 class="title title--white">Tickets</h2>
+                <p class="subtitle">Tenemos varias opciones para todos los gustos, consigue una que se adapte a ti.</p>
+                <div class="row">
+                    <div class="col tickets__price ml-md-0">
+                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                        </ul>
+                        <h4 class="text-uppercase text--red">BPM</h4>
+                        <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
+                        <span class="tickets__number">40</span>
+                        <ul class="list-unstyled list-square text-left pl-4 pr-4 pt-2">
+                            <li>Escenario Principal</li>
+                            <li>Camiseta - 1 Bebida</li>
+                            <li>Acceso Zonas comunes</li>
+                        </ul>
+                        <a href="#" id="" class="btn btn-primary">Comprar</a>
+                    </div>
+                    <div class="col tickets__price">
+                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                        </ul>
+                        <h4 class="text-uppercase text--pink">Echo</h4>
+                        <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
+                        <span class="tickets__number">40</span>
+                        <ul class="list-unstyled list-square text-left pl-4 pr-4 pt-2">
+                            <li>Escenario Principal</li>
+                            <li>Camiseta - 1 Bebida</li>
+                            <li>Acceso Zonas comunes</li>
+                        </ul>
+                        <a href="#" id="" class="btn btn-primary">Comprar</a>
+                    </div>
+                    <div class="col tickets__price mr-md-0">
+                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="img/icon_tickets.png"></li>
+                        </ul>
+                        <h4 class="text-uppercase text--purple">Loop</h4>
+                        <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
+                        <span class="tickets__number">40</span>
+                        <ul class="list-square list-unstyled text-left pl-4 pr-4 pt-2">
+                            <li>Escenario Principal</li>
+                            <li>Camiseta - 1 Bebida</li>
+                            <li>Acceso Zonas comunes</li>
+                        </ul>
+                        <a href="#" id="" class="btn btn-primary">Comprar</a>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
     <script src="js/jquery.min.js"></script>
@@ -271,7 +327,7 @@
             // Slick  Settings
 
              $('.djs__gallery').slick({
-                 
+                 autoplay: true,
                  infinite: true,
                  slidesToShow: 3,
                  slidesToScroll: 3,
