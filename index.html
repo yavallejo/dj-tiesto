@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,700|Saira:300,400,500,700" rel="stylesheet">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css" />
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css" />
     <link rel="stylesheet" href="css/main.css">
     <title>DJ-Tiestos</title>
 </head>
@@ -54,7 +58,7 @@
         </div>
     </header> <!--Header-->
     <main class="main">
-        <section class="presentations sectionBorder">
+        <section class="presentations sectionBorder sectionBorder--bottom">
             <article class="container">
                 <h2 class="title title--white">Presentaciones</h2>
                 <p>Aquí encontrarás los detalles de las presentaciones horarios, djs, escenario y la posibilidad de comprar tickets</p>
@@ -155,20 +159,151 @@
                     </div>
                 </article>
             </div>
+        </section> <!--End NumberEvents-->
+        <section class="djs sectionBorder--top sectionBorder--bottom">
+            <div class="container">
+                <article class="row">
+                    <div class="col-md-9 pl-0 order-1 order-md-0">
+                        <ul class="list-unstyled djs__gallery">
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj_alexio.png" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Alexio</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj_caroline.png" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Caroline</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj_sabrina.png" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Sabrina</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj-caroline.jpg" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Caroline</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj-mager.jpg" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Mager</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj-krakenas.jpg" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Krakenas</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj-murdock.jpg" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Murdock</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                            <li>
+                                <figure>
+                                    <img class="img-fluid" src="img/dj-isabella.jpg" alt="DJ">
+                                    <figcaption>
+                                        <h5>DJ Isabella</h5>
+                                        <h6>Ambient Electronic</h6>
+                                    </figcaption>
+                                </figure>
+                            </li>
+                        </ul>                        
+                    </div>
+                    <div class="col-md-3 text-center text-md-right order-0">
+                        <h2 class="title title--black title--small text-md-right">DJS</h2>
+                        <p>Ellos son el verdadero foco de atención de nuestro evento</p>
+                        <ul class="d-flex list-unstyled justify-content-center justify-content-md-end mb-4">
+                            <li class="mr-2">
+                                <a href="javascript:void(0);" class="JS-slick-next"><img src="img/icon_left_slick.png" alt="" class=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="JS-slick-prev"><img src="img/icon_right_slick.png" alt=""></a>
+                            </li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3 d-none d-md-inline">Ver Todos</a>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
-    
-
-
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
     <script>
         $(document).ready(function () {
             $('[data-target="#navbarNavAltMarkup"]').click(function () {
                 
                 $('.navbar-expand-lg').toggleClass('relative');
                 $('.collapse').addClass('navbar-absolute');
+            });
+
+            // Slick  Settings
+
+             $('.djs__gallery').slick({
+                 
+                 infinite: true,
+                 slidesToShow: 3,
+                 slidesToScroll: 3,
+                 responsive: [
+                     {
+                         breakpoint: 768,
+                         settings: {
+                             arrows: false,
+                             centerMode: true,
+                             centerPadding: '40px',
+                             slidesToShow: 2
+                         }
+                     },
+                     {
+                         breakpoint: 480,
+                         settings: {
+                             arrows: false,
+                             centerMode: true,
+                             centerPadding: '40px',
+                             slidesToShow: 1
+                         }
+                     }
+                 ]
+             });
+            
+            // Slick Navigation
+             
+            $('.JS-slick-next').click(function () {
+                $(".djs__gallery").slick("slickNext");
+            });
+            $('.JS-slick-prev').click(function () {
+                $(".djs__gallery").slick("slickPrev");
             });
         });
     </script>
