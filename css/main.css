@@ -403,6 +403,17 @@ a{
     margin-right: 1rem;    
 }
 
+.sponsors{
+    background-image: url("../img/bg_sponsor.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
 .subtitle{
     color: #53C7F0;
     max-width: 400px;
