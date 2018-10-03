@@ -141,6 +141,44 @@ a{
         }
     }
 
+.footer{
+    background-color: var(--black-color);
+    color: var(--white-color);
+    overflow: hidden;
+    text-align: center;
+}
+    
+
+    .footer__nav a{
+        display: block;
+        color: var(--main-bg-color);
+        font-weight: 500;
+        letter-spacing: var(--letter-spacing);
+        text-transform: uppercase;
+        font-size:0.7rem;
+
+    }
+        .footer__nav a:hover{
+            text-decoration: none;
+            color:var(--main-bg-color-hover);
+        }
+    
+    @media screen and (min-width:1024px){
+        .footer{
+            text-align: left;
+        }
+        .footer__nav a{
+            font-size:0.7rem;
+        }
+    }
+
+    @media screen and (min-width:1200px){
+        .footer__nav a{
+            font-size:0.9rem;
+        }
+    }
+
+
 .gallery{
     padding-top: var(--padding-section);
     padding-bottom: var(--padding-section);
