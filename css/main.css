@@ -25,7 +25,26 @@ a{
     font-family: var(--main-font-family);
 }
 
+.breadcrumb{
+    background-color: transparent;
+    margin-top: 0;  
+    padding-top: 0;  
+}
+    .breadcrumb-item a{
+        color: var(--white-color);
+        font-family: var(--secundary-font-family);
+        letter-spacing: var(--letter-spacing);
+    }
 
+    .breadcrumb-item a.disabled{
+        color: var(--secundary-color);
+        cursor: default;
+        text-transform: uppercase;
+
+    }
+        .breadcrumb-item a.disabled:hover{
+            text-decoration: none;
+        }
 
 .btn-primary,
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -45,6 +64,34 @@ a{
     .btn-primary:focus,
     .btn-primary.focus{
        box-shadow: 0 0 0 0.2rem var(--main-bg-color);
+    }
+
+.buyTicket{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    text-align: center;
+    letter-spacing: calc(var(--letter-spacing) - 1px );
+}
+
+    .buyTicket h3{
+       font-weight: 500;       
+       font-size: 3.5rem; 
+    }
+
+    .buyTicket p{
+        font-family: var(--secundary-font-family);
+        font-weight: 400;
+        color: var(--secundary-color);
+        margin-top: 2rem;
+        margin-bottom:2rem;
+    }
+
+    .buyTicket__container{
+        max-width: 800px;
+        margin-left:auto;
+        margin-right: auto;
     }
 
 
@@ -140,6 +187,48 @@ a{
             margin-top: 4rem;
         }
     }
+
+.festivalMusic{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+    .festivalMusic p{
+        margin-left:-15px;
+        display: none;
+    }
+        @media screen and (min-width:768px){
+            .festivalMusic p{
+                display: block;
+            }
+        }
+
+    .festivalMusic__specials{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+        
+    }
+
+        .festivalMusic__specials .numberEvents__item{
+            margin:1rem 2rem;
+        }
+
+        @media screen and (min-width:768px){
+            .festivalMusic__specials .numberEvents__item{
+                margin:1rem 0;
+            }
+        }
+
+        @media screen and (min-width:1024px){
+            .festivalMusic__specials .numberEvents__item{
+                margin:1rem 2rem;
+            }
+        }
+
+        .festivalMusic__specials  .numberEvents__item h5{
+            color: var(--blue-color);
+        }
 
 .footer{
     background-color: var(--black-color);
@@ -340,6 +429,16 @@ a{
                     font-size: 1.3rem;
                 }
             }
+    
+        .header--notHome{
+            background-image: url("../img/bg_wp_festival.png");
+            height: 70vh;
+        }
+
+            .header--notHome .header__bottom{
+                display: flex;
+                align-items: center;
+            }
 
 .list-square li::before{
     content: "■";
@@ -438,8 +537,7 @@ a{
     font-size: 1.15rem;
     border-bottom: 1px dashed var(--main-bg-color);
     padding-top:0.6rem;
-    padding-bottom:0.6rem;
-    
+    padding-bottom:0.6rem;    
 }
 
     @media screen and (min-width:768px){
@@ -452,6 +550,10 @@ a{
         .navbar-expand-lg .navbar-nav .nav-link:hover{
             color:var(--main-bg-color);
         }
+    }
+
+    .navbar-expand-lg .navbar-nav .nav-link.current_page_item{
+        color:var(--main-bg-color);
     }
 
 .navbar-brand{
@@ -678,6 +780,17 @@ a{
 
     .title--black{
         color:#19112A;
+    }
+
+    .title--page{
+        margin-bottom: 0;
+        font-family: var(--secundary-font-family);
+        letter-spacing: var(--letter-spacing);
+        font-size: 3.5rem;
+    }
+
+    .title--page:after{
+        display: none;
     }
 
     .title--small:after{        
