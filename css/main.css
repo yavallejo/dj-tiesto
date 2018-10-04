@@ -147,6 +147,24 @@ a{
     overflow: hidden;
     text-align: center;
 }
+
+    .footer__information{
+        margin-left:auto;
+        margin-right:auto;
+        padding-bottom: 3rem;
+        padding-top: 3rem;
+    }
+        @media screen and (min-width:992px){
+            .footer__information{
+               padding-left: 3.5rem
+            }
+        }
+
+        @media screen and (min-width:1200px){
+            .footer__information{
+               padding-left: 7.5rem
+            }
+        }
     
 
     .footer__nav a{
@@ -184,7 +202,17 @@ a{
     padding-bottom: var(--padding-section);
     font-family: var(--secundary-font-family);
     font-weight: 500;
-}
+}   
+    .gallery p{
+           font-family: var(--main-font-family);
+           font-weight: 400;
+        }
+
+    @media screen and (min-width:768px){
+        .gallery p{
+            margin-left:-15px;
+        }
+    }
 
     .gallery__animation{
         display: flex;
@@ -342,6 +370,7 @@ a{
         margin-right: -15px;
         margin-left: -15px;
         text-align: center;
+        letter-spacing: calc(var(--letter-spacing) - 1px );
         
     }
         @media screen and (min-width:768px){
@@ -351,7 +380,6 @@ a{
            }
            .presentations p{
                text-align: left;
-               font-size: 1.4rem;
                font-weight: 700;
            } 
         }
@@ -373,22 +401,22 @@ a{
         
         .presentations__details--title{
             text-transform: uppercase;
-            font-size:0.8rem;
+            font-size:1rem;
             font-weight: 500;
             letter-spacing:calc(var(--letter-spacing) + 1px);
         }
         .presentations__details--information{
             font-family: var(--secundary-font-family);
-            font-size:0.8rem;
+            font-size:1rem;
             font-weight: 500;
         }
 
             @media screen and (min-width:768px){
                 .presentations__details--title{
-                    font-size:1.5rem; 
+                    font-size:1.3rem; 
                 }
                 .presentations__details--information{
-                   font-size:1.75rem;
+                   font-size:1.3rem;
                 }
             }
 
@@ -502,7 +530,7 @@ a{
             font-size:1.25rem;
         }
         .numberEvents__item h6{
-            font-size:3.125rem;
+            font-size:2.5rem;
             font-weight: 500;
             font-family: var(--main-font-family);
             margin-bottom: 0;
@@ -653,7 +681,7 @@ a{
     }
 
     .title--small:after{        
-        max-width: 80px;
+        
     }
         @media screen and (min-width:768px){
             .title--small:after{
