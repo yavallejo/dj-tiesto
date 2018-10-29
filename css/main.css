@@ -2,3 +2,8 @@ body{
     font-family: 'Kanit', sans-serif;
     font-family: 'Saira', sans-serif;
 }
+
+.icono-personalizado{
+    font-size: 5rem;
+    color: blueviolet;
+}
