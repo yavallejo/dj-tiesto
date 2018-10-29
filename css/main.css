@@ -20,8 +20,74 @@
 
 
 
-body{
-    font-family: var(--secundary-font-family);
-    
+body,
+a,
+html{
+    font-family: var(--main-font-family);    
+}
+
+.custom-toggler{
+    position: relative;
+}
+
+.custom-toggler.navbar-toggler:focus,
+.custom-toggler.navbar-toggler:active{
+    outline: 0;
+}
+
+.custom-toggler.navbar-toggler span{
+    display:block;
+    background-color: var(--white-color);
+    height: 3px;
+    width:25px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    position: relative;
+    left:0;
+    opacity: 1;
+    cursor: pointer;
+    transform: rotate(0deg);
+}
+
+.custom-toggler.navbar-toggler span:nth-child(1),
+.custom-toggler.navbar-toggler span:nth-child(3){
+    transition: transform .35s ease-in-out;
+}
+
+.custom-toggler.navbar-toggler:not(.collapsed) span:nth-child(1),
+.custom-toggler.navbar-toggler:not(.collapsed) span:nth-child(3){
+    position: absolute;
+    left:12px;
+    top:10px;
+    transform: rotate(135deg);
+    opacity:0.9;
+}
+
+.custom-toggler.navbar-toggler:not(.collapsed) span:nth-child(2){
+    height: 12px;
+    visibility: hidden;
+    background-color: transparent;
+}
+
+.custom-toggler.navbar-toggler:not(.collapsed) span:nth-child(3){
+    transform: rotate(-135deg);    
+}
+
+
+.header{
+    background-image: url("../img/bg_header.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+
+.nav-link{
+    color: var(--white-color);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
