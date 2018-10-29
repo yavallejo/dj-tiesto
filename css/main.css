@@ -1,9 +1,27 @@
-body{
-    font-family: 'Kanit', sans-serif;
-    font-family: 'Saira', sans-serif;
+/* Variables Css */
+
+:root{
+    /* Colors */
+    --main-bg-color: #FD275F;
+    --main-bg-color-hover : #E35A78;
+    --secundary-color: #53C7F0;
+    --blue-color: #060F20;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    /* Fonts */
+    --main-font-family: 'Saira', sans-serif;
+    --secundary-font-family: 'Kanit', sans-serif;
+    /* Other Settings */
+    --border-radius: 50px;
+    --letter-spacing: 2px;
+    --padding-section: 5rem;
+
 }
 
-.icono-personalizado{
-    font-size: 5rem;
-    color: blueviolet;
+
+
+body{
+    font-family: var(--secundary-font-family);
+    
 }
+
