@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!-- BEM: BLOCK ELEMENT MODI -->
     <header class="header">
-        <div class="container pt-1 pt-md-4">
+        <div class="container pt-1 pt-md-4 header__top">
             <nav class="navbar navbar-expand-lg">
                 <a href="index.html" class="navbar-brand">
                     <img src="img/logo-wp-festival.png" alt="WP Music Festival" class="img-fluid">
@@ -32,6 +33,31 @@
                     </div>
                 </div>
             </nav>
+        </div>
+        <div class="container header__bottom">
+            <ul class="list-inline d-flex header__meta">
+                <li>
+                    <img src="img/icon_date.png" alt="Icon Date">
+                    <span>21 Sept 2018</span>
+                </li>
+                <li>
+                    <img src="img/icon_headphones.png" alt="Icon Date">
+                    <span>24 DJs</span>
+                </li>
+                <li>
+                    <img src="img/icon_ticket.png" alt="Icon Date">
+                    <span>300 Entradas</span>
+                </li>
+            </ul>
+            <div class="header__information">
+                <h2 class="mb-0 mt-4">
+                    <strong>WP</strong> Festival Music <strong>Bogotá</strong> 2018
+                </h2>
+                <p>Bogotá <strong>WP Festival Music</strong> es un Evento de música electrónica con Djs que estan dentro del <strong>Top 20</strong> en el mundo.</p>
+                <div class="header__btn">
+                    <a href="#" class="btn btn-primary">Comprar tickets</a>
+                </div>
+            </div>
         </div>
     </header>
     <!-- Scripts -->

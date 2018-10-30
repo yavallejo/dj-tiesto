@@ -23,8 +23,20 @@
 body,
 a,
 html{
-    font-family: var(--main-font-family);    
+    font-family: var(--main-font-family);
+    letter-spacing: calc(var(--letter-spacing) - 1px);
 }
+
+/* Button Primary  */
+
+.btn-primary{
+    background-color: var(--main-bg-color);
+    border-color:var(--main-bg-color);
+}
+    .btn-primary:hover{
+      background-color: var(--main-bg-color-hover);
+      border-color:var(--main-bg-color-hover);  
+    }
 
 .custom-toggler{
     position: relative;
@@ -82,7 +94,74 @@ html{
     width: 100%;
     height: 100vh;
 }
+    .header__btn{
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+    }
 
+    @media screen and (min-width:768px){
+       .header__btn{
+          text-align: left; 
+       } 
+    }
+
+    .header__bottom{
+        color: var(--white-color);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 96px);
+        
+    }
+
+    @media screen and (min-width:768px){
+        .header__bottom{
+            height: calc(100% - 176px);
+        }
+    }
+
+
+
+    .header__information{
+        max-width: 728px;
+    }
+        .header__information h2{
+            font-size:2rem;
+            font-weight: 400;
+            font-family: var(--secundary-font-family);
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        @media screen and (min-width:768px){
+            .header__information h2{
+                text-align: left;
+            }
+        }
+
+        .header__information strong{
+            color: var(--secundary-color);
+        }
+
+        .header__information p{
+            font-weight: 300;
+            font-size: 1.3rem;
+        }
+
+    @media screen and (max-width:768px){
+        .header__meta{
+            display:none !important;
+        }
+    }
+
+            .header__meta li{
+                margin-left:1rem;
+                margin-right:1rem;
+            }
+                .header__meta li:first-child{
+                    margin-left:0;
+                }
 
 .nav-link{
     color: var(--white-color);
