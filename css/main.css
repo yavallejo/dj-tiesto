@@ -112,6 +112,7 @@ html{
         flex-direction: column;
         justify-content: center;
         height: calc(100% - 96px);
+        font-family: var(--secundary-font-family);
         
     }
 
@@ -129,14 +130,15 @@ html{
         .header__information h2{
             font-size:2rem;
             font-weight: 400;
-            font-family: var(--secundary-font-family);
             text-transform: uppercase;
             text-align: center;
+            font-size:2rem;
         }
 
         @media screen and (min-width:768px){
             .header__information h2{
                 text-align: left;
+                font-size:3.8rem;
             }
         }
 
@@ -163,10 +165,52 @@ html{
                     margin-left:0;
                 }
 
+.navbar--absolute{
+    position:absolute;
+    top:92px;
+    left: 0;
+    right: 0;
+    background-color: rgba(6, 15, 32, 0.9);
+}
+    @media screen and (min-width:768px){
+       .navbar--absolute{
+           position: static;
+           background-color: transparent;
+       } 
+    }
+
+.navbar-brand{
+    max-width: 144px;
+}
+
+    @media screen and (min-width:768px){
+        .navbar-brand{
+            max-width: 272px;
+        }
+    }
 .nav-link{
     color: var(--white-color);
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1px;
+    border-bottom: 1px dashed var(--main-bg-color);
+    padding-top: 0.7rem;
+    padding-bottom:0.7rem;
+    font-size: 1.15rem;
+   
 }
+
+    @media screen and (min-width:768px){
+        .navbar-expand-lg .navbar-nav .nav-link{
+            border-bottom: 0;
+            padding-left: 1.25rem;
+            padding-right: 1.25rem;
+        }
+    }
+
+   
+
+    .nav-link:hover,
+    .nav-link.active{
+        color: var(--main-bg-color);
+    }
 
