@@ -8,6 +8,7 @@
     --blue-color: #060F20;
     --white-color: #ffffff;
     --black-color: #000000;
+    --gray-color: #333333;
     /* Fonts */
     --main-font-family: 'Saira', sans-serif;
     --secundary-font-family: 'Kanit', sans-serif;
@@ -24,6 +25,18 @@ body,
 a{
     font-family: var(--main-font-family);
 }
+
+.boxImage{
+    border-image: linear-gradient(to left, #2a66de 0%, #fd225a 100%);
+    border-image-slice: 1;
+    border-width: 5px;
+    border-style: solid;
+}
+    @media screen and (min-width:768px){
+        .boxImage img{
+            transform: translate(30px,30px)
+        }
+    }
 
 .breadcrumb{
     background-color: transparent;
@@ -94,6 +107,17 @@ a{
         margin-right: auto;
     }
 
+.close{
+    color: var(--main-bg-color);
+    font-size: 5rem;
+    text-shadow: none;
+    opacity: 1;
+    font-weight: 300;
+}
+    .close:not(:disabled):not(.disabled):hover,
+    .close:not(:disabled):not(.disabled):focus{
+        color: var(--secundary-color);
+    }
 
 .custom-toggler{
     position: relative;
@@ -161,26 +185,41 @@ a{
     padding-bottom: var(--padding-section);
     position: relative;
 }
+    .djs__centerMobile{
+        max-width:300px;
+        margin-left:auto;
+        margin-right: auto;
+    }
+        @media screen and (min-width:768px){
+            .djs__centerMobile{
+                max-width: 100%;
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
     .djs__gallery{
        
     }
 
-        .djs__gallery h5{
-            font-family: var(--secundary-font-family);
-            font-weight: 400;
-            letter-spacing: var(--letter-spacing);
-            color:var(--black-color);
-            font-size:1.8rem;
-            margin-top:0.5rem;
-            margin-bottom: 0;
-        }
-        .djs__gallery h6{
-            font-weight: 300;
-            font-family: var(--secundary-font-family);
-            font-size:1rem;
-            color: #333333;
-            
-        }
+    .djs__items:hover{
+        cursor: pointer;
+    }
+    
+    .djs__name{
+        font-family: var(--secundary-font-family);
+        font-weight: 400;
+        letter-spacing: var(--letter-spacing);
+        color:var(--black-color);
+        font-size:1.8rem;
+        margin-top:0.5rem;
+        margin-bottom: 0;
+    }
+    .djs__type{
+        font-weight: 300;
+        font-family: var(--secundary-font-family);
+        font-size:1rem;
+        color: var(--gray-color);
+    }
     
     @media screen and (min-width:768px){
         .djs__information p{
@@ -519,6 +558,11 @@ a{
                 }
             }
 
+.previewMusical{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+}
+
     .navbar-absolute{
         position: absolute;
         top: 90px;
@@ -638,6 +682,42 @@ a{
             margin-bottom: 0;
             margin-top: 1rem;
         }
+
+@media screen and (min-width:768px){
+    .modal-dialog{
+        max-width: 95%;
+    }
+}
+
+@media screen and (min-width:1024px){
+    .modal-dialog{
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .modal-dialog{
+        max-width: 70%;
+    }
+}
+
+.modal-content{
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-family: var(--secundary-font-family);
+    font-weight: 300;
+    padding-top: calc(var(--padding-section) - 4rem );
+    padding-bottom: calc(var(--padding-section) - 3rem );
+}
+
+.modal-header{
+    border-bottom: 0;
+}
+
+.modal-header .close{
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+}
 
 
 .sectionBorder--bottom:before{
@@ -802,3 +882,23 @@ a{
                 margin-right: 0;
             }
         }
+
+.instagramBox{
+    background-color: var(--main-bg-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 1rem 5rem;
+    font-family: var(--main-font-family);
+    position: absolute;
+    top:38%;
+    left:30%;
+}
+
+.instagramBox strong{
+    font-size: 3rem;
+    font-weight: 700;   
+}
+
+.instagramBox span{
+    font-weight: 500;
+}
