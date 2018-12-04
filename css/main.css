@@ -7,17 +7,20 @@
     --secundary-color: #53C7F0;
     --blue-color: #060F20;
     --white-color: #ffffff;
+    --black-color: #000000;
     /* Fonts */
     --main-font-family: 'Saira', sans-serif;
     --secundary-font-family: 'Kanit', sans-serif;
     /* Other Settings */
     --border-radius: 50px;
-    --padding-secton: 5rem;
+    --letter-spacing: 2px;
+    --padding-section: 5rem;
 
 
 }
 
 html,
+body,
 a{
     font-family: var(--main-font-family);
 }
@@ -31,6 +34,8 @@ a{
     background-color: var(--main-bg-color);
     border-color: var(--main-bg-color);
     border-radius:var(--border-radius);
+    padding-left:2rem;
+    padding-right:2rem;
 }
     .btn-primary:hover{
         background-color: var(--main-bg-color-hover);
@@ -104,6 +109,31 @@ a{
     opacity: 0.9;
 }
 
+.djs{
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
+    position: relative;
+}
+    .djs__gallery{
+       
+    }
+
+        .djs__gallery h5{
+            font-family: var(--secundary-font-family);
+            font-weight: 400;
+            letter-spacing: var(--letter-spacing);
+            color:var(--black-color);
+            font-size:1.8rem;
+            margin-top:0.5rem;
+            margin-bottom: 0;
+        }
+        .djs__gallery h6{
+            font-weight: 300;
+            font-family: var(--secundary-font-family);
+            font-size:1rem;
+            color: #333333;
+            
+        }
 
 .header{
     background-image: url("../img/bg_header.png");
@@ -165,7 +195,7 @@ a{
     
     .header__information{
         max-width: 728px;
-        letter-spacing: 1px;
+        letter-spacing: calc(var(--letter-spacing) - 1px);
     }
         .header__information h2{
             font-size: 2rem;
@@ -203,8 +233,8 @@ a{
     color: var(--white-color);
     padding-left:18px;
     padding-right:18px;
-    padding-bottom:var(--padding-secton);;
-    padding-top:var(--padding-secton);;
+    padding-bottom:5rem;
+    padding-top:5rem;
     position: relative;
 }
 
@@ -239,7 +269,6 @@ a{
     }
         .presentations__details:hover{
             background-color: var(--main-bg-color);
-            cursor:none;
         }
 
         .presentations__details:hover a{
@@ -250,7 +279,7 @@ a{
             text-transform: uppercase;
             font-size:0.8rem;
             font-weight: 500;
-            letter-spacing:3px;
+            letter-spacing:calc(var(--letter-spacing) + 1px);
         }
         .presentations__details--information{
             font-family: var(--secundary-font-family);
@@ -281,7 +310,7 @@ a{
     color:var(--white-color);
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: calc(var(--letter-spacing) - 1px);;
     font-size: 1.15rem;
     border-bottom: 1px dashed var(--main-bg-color);
     padding-top:0.6rem;
@@ -314,13 +343,13 @@ a{
 .numberEvents{
     background-color: var(--blue-color);
     color:var(--white-color);
-    padding-top: var(--padding-secton);
-    padding-bottom: var(--padding-secton);
+    padding-top: var(--padding-section);
+    padding-bottom: var(--padding-section);
 }
 
     .numberEvents__item{
         text-align: center;
-        letter-spacing: 1px;
+        letter-spacing: calc(var(--letter-spacing) - 1px);;
     }
         .numberEvents__item h5{
             color: var(--secundary-color);
@@ -337,15 +366,32 @@ a{
         }
 
 
-.sectionBorder:before{
-    position: absolute;
-    right: 0;
-    bottom:0;
-    width:10px;
-    height: 141px;
-    background-color:var(--main-bg-color);
-    content: "";
-}
+    .sectionBorder--bottom:before{
+        right: 0;
+        bottom:0;
+        position: absolute;
+        width:10px;
+        height: 141px;
+        background-color:var(--main-bg-color);
+        content: "";
+    }
+
+    .sectionBorder--top:after{
+        left:0;
+        top: 0;
+        position: absolute;
+        width:10px;
+        height: 141px;
+        background-color:var(--main-bg-color);
+        content: "";
+    }
+
+    .slick-slide{
+        margin-right: 1rem;
+       
+    }
+
+        
 
 .title{
     font-family: var(--main-font-family);
@@ -387,3 +433,13 @@ a{
     .title--black{
         color:#19112A;
     }
+
+    .title--small:after{        
+        max-width: 80px;
+    }
+        @media screen and (min-width:768px){
+            .title--small:after{
+                margin-left:auto;
+                margin-right: 0;
+            }
+        }
