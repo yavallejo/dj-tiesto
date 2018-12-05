@@ -271,8 +271,7 @@
                     </div>
                 </article>
             </div>
-        </section>
-        <!--End DJS-->
+        </section> <!--End DJS-->
         <section class="tickets">
             <article class="container">
                 <h2 class="title title--white">Tickets</h2>
@@ -328,7 +327,36 @@
                     </div>
                 </div>
             </article>
-        </section>
+        </section> <!--End Tickets-->
+        <section class="sponsors">
+            <div class="container">
+                <h2 class="title title--white title--small text-md-right">Patrocinadores</h2>
+                <div class="row">
+                    <div class="col-12 col-md-10 order-2 order-md-0 mt-5 mt-md-0">
+                        <div class="sponsors__gallery">
+                            <div><img class="img-fluid" src="img/sponsor_babis_beats.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="img/sponsor_discoman.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="img/sponsor_gipsod.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="img/sponsor_los_angeles.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="img/sponsor_stan.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="img/sponsor_street_wear_shop.png" alt="Sponsor"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-2 order-1 order-md-1 ">
+                        <ul class="d-flex list-unstyled justify-content-center justify-content-md-end align-items-center h-100">
+                            <li class="mr-2">
+                                <a href="javascript:void(0);" class="JS-slickSponsors-next"><img src="img/icon_left_slick.png"
+                                        alt="" class=""></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="JS-slickSponsors-prev"><img src="img/icon_right_slick.png"
+                                        alt=""></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section> <!--End Sponsors-->
     </main>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -343,6 +371,39 @@
             });
 
             // Slick  Settings
+
+            
+
+            $('.sponsors__gallery').slick({
+                autoplay: true,
+                arrows:false,
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                responsive: [
+                      {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false,
+                            centerMode: true,
+                            centerPadding: '40px',
+                            slidesToShow: 2
+                        }
+                    }
+                ]
+            });
+
+            // Slick Navigation
+
+            $('.JS-slickSponsors-next').click(function () {
+                $(".sponsors__gallery").slick("slickNext");
+            });
+            $('.JS-slickSponsors-prev').click(function () {
+                $(".sponsors__gallery").slick("slickPrev");
+            });
+
+
+            // ---------------------------------------------------------------
 
             $('.djs__gallery').slick({
                 autoplay: true,
