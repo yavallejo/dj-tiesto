@@ -634,6 +634,16 @@ a{
                    font-size:1.3rem;
                 }
             }
+    
+    .presentations--inside{
+        padding-top: var(--padding-section);
+        padding-bottom: var(--padding-section);
+        position:relative;
+    }
+
+        .presentations--inside p{
+            max-width: 700px;
+        }
 
 .previewMusical{
     padding-top: var(--padding-section);
