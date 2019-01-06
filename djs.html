@@ -49,7 +49,7 @@
     </header>
     <!--Header-->
     <main class="main">
-        <section class="djs sectionBorder--top sectionBorder--bottom">
+        <section class="djs sectionBorder--top sectionBorder--bottom paddingSection">
             <header class="container sectionBorder--top">
                 <h2 class="title title--black">DJS</h2>
                 <p>Ellos son el verdadero foco de atención en nuestro evento.</p>
@@ -235,7 +235,7 @@
 
         </section>
         <!--End DJS-->
-        <section class="buyTicket">
+        <section class="buyTicket paddingSection">
             <div class="buyTicket__container">
                 <h3>Compra tus entradas</h3>
                 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
@@ -243,7 +243,7 @@
                 <a href="#" class="btn btn-primary btn-lg">Comprar Tickets</a>
             </div>
         </section>
-        <section class="previewMusical position-relative">
+        <section class="previewMusical position-relative paddingSection">
             <header class="container sectionBorder--top">
                 <h2 class="title title--black">Preview Musical</h2>
             </header>
@@ -286,38 +286,33 @@
     <footer class="footer">
         <div class="container-fluid pl-0 pr-0">
             <div class="row">
-                <div class="col-12 col-md-6 footer__information d-flex flex-column justify-content-center">
-                    <h5>WP FESTIVAL MUSIC - Bogotá</h5>
-                    <p class="d-none d-md-block mt-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                        eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                        accusam et justo duo dolores et ea rebum.</p>
-                    <ul class="list-unstyled d-flex mt-3 justify-content-center justify-content-lg-start pl-3 pl-lg-0">
-                        <li class="mr-4">
-                            <a href="#">
-                                <img src="img/icon_twitter.png" alt="">
-                            </a>
-                        </li>
-                        <li class="mr-4">
-                            <a href="#">
-                                <img src="img/icon_facebook.png" alt="">
-                            </a>
-                        </li>
-                        <li class="mr-4">
-                            <a href="#">
-                                <img src="img/icon_instagram.png" alt="">
-                            </a>
-                        </li>
-                    </ul>
-                    <ul class="list-unstyled d-flex mt-3 footer__nav flex-wrap justify-content-center justify-content-lg-start pl-3 pl-lg-0">
-                        <li class="mr-3"><a href="#">Wp Festival</a></li>
-                        <li class="mr-3"><a href="#">DJS</a></li>
-                        <li class="mr-3"><a href="#">Presentaciones</a></li>
-                        <li class="mr-3"><a href="#">Blog</a></li>
-                        <li class="mr-3"><a href="#">Contacto</a></li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="d-flex flex-column justify-content-center footer__information text-center text-lg-left">
+                        <h5>WP FESTIVAL MUSIC - Bogotá</h5>
+                        <p class="d-none d-md-block mt-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                            nonumy eirmod
+                            tempor invidunt ut labore et dolore
+                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+                            rebum.</p>
+                        <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start mt-5">
+                            <li class="mr-4"><a href=""><img src="img/icon_twitter.png" alt=""></a></li>
+                            <li class="mr-4"><a href=""><img src="img/icon_facebook.png" alt=""></a></li>
+                            <li class="mr-4"><a href=""><img src="img/icon_instagram.png" alt=""></a></li>
+                        </ul>
+                        <nav class="footer__nav">
+                            <ul class="list-unstyled  d-flex justify-content-center justify-content-lg-start">
+                                <li class="mr-3"><a href="#">WP FESTIVAL</a></li>
+                                <li class="mr-3"><a href="#">DJS</a></li>
+                                <li class="mr-3"><a href="#">Presentaciones</a></li>
+                                <li class="mr-3"><a href="#">Blog</a></li>
+                                <li class="mr-3"><a href="#">Contacto</a></li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
-                <div class="d-none d-lg-block col-md-6">
-                    <img class="img-fluid" src="img/mapa.png" alt="Mapa de Google">
+    
+                <div class="col-lg-6 d-none d-lg-block">
+                    <img src="img/mapa.png" class="img-fluid" alt="">
                 </div>
             </div>
         </div>
