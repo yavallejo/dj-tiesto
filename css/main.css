@@ -48,6 +48,56 @@ a{
     }
 
 
+.boxSection{
+    padding-bottom:var(--padding-section);
+    padding-top:var(--padding-section);
+}
+
+.buyTicket{
+    background-color: var(--blue-color);
+    color:var(--white-color);
+    text-align: center;
+}
+    .buyTicket__container{
+        max-width: 780px;
+    }
+    .buyTicket h3{
+        font-size: 3.5rem;
+        font-weight: 600;
+    }
+    .buyTicket p{
+        color: var(--secundary-color);
+        font-family: var(--secundary-font-family);
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+.breadcrumb{
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+    .breadcrumb-item a{
+        color: var(--white-color);
+        font-family: var(--secundary-font-family);
+        font-size: 1.1rem;
+        letter-spacing: var(--letter-spacing);
+    }
+
+        .breadcrumb-item a.disabled{
+            text-transform: uppercase;
+            cursor: default;
+            color: var(--secundary-color);
+        }
+            .breadcrumb-item a.disabled:hover{
+                color:gray;
+            }
+            .breadcrumb-item a:hover{
+                text-decoration: none;
+                color:var(--main-bg-color-hover);
+            }
+
+
+
 .custom-toggler{
     position: relative;
 }
@@ -110,8 +160,7 @@ a{
 }
 
 .djs{
-    padding-top: var(--padding-section);
-    padding-bottom: var(--padding-section);
+    
     position: relative;
 }
     .djs__gallery{
@@ -140,6 +189,29 @@ a{
             margin-top: 4rem;
         }
     }
+
+.festivalMusic{
+    
+}
+    .festivalMusic__specials{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+    }
+
+        .festivalMusic__specials .numberEvents__item{
+            margin: 1rem 3rem;
+        }
+
+        .festivalMusic__specials .numberEvents__item:nth-child(even){
+            margin-right: 0;            
+        }
+
+        .festivalMusic__specials .numberEvents__item h5,
+        .festivalMusic__specials .numberEvents__item h6{
+            margin: 0;
+        }
 
 .footer{
     background-color: var(--blue-color);
@@ -203,8 +275,6 @@ a{
 
 
 .gallery{
-    padding-top: var(--padding-section);
-    padding-bottom:var(--padding-section);
     position:relative;
 }
 
@@ -354,6 +424,18 @@ a{
                     font-size: 1.3rem;
                 }
             }
+    
+    .header--notHome{
+        height: 70vh;
+        background-image: url("../img/bg_wp_festival.png");
+    }
+        .header--notHome .header__bottom{
+            align-items: center;
+            height: calc(100% - 300px);
+            
+        }
+    
+   
 
 .list-square li::before{
     content: "■";
@@ -371,8 +453,6 @@ a{
     color: var(--white-color);
     padding-left:18px;
     padding-right:18px;
-    padding-bottom:var(--padding-section);
-    padding-top:var(--padding-section);
     position: relative;
 }
 
@@ -484,8 +564,7 @@ a{
     background-size:cover;
     width:100%;
     height:100%;
-    padding-top: var(--padding-section);
-    padding-bottom: var(--padding-section);
+    
 }
     .news__right .news__item:nth-child(1){
         margin-bottom: 6rem;
@@ -520,8 +599,7 @@ a{
 .numberEvents{
     background-color: var(--blue-color);
     color:var(--white-color);
-    padding-top: var(--padding-section);
-    padding-bottom: var(--padding-section);
+    
 }
 
     .numberEvents__item{
@@ -576,8 +654,6 @@ a{
     background-position:center;
     width:100%;
     height:auto;
-    padding-top: var(--padding-section);
-    padding-bottom: var(--padding-section);
 }
 
 
@@ -603,8 +679,6 @@ a{
 
 .tickets{
     background-color: var(--blue-color);
-    padding-top: var(--padding-section);
-    padding-bottom: var(--padding-section);
     box-sizing: border-box;
     padding-left:15px;
     padding-right:15px;
@@ -682,6 +756,20 @@ a{
             margin-left:0;
         }
     }
+
+    .title--page{
+        font-size: 2.5rem;
+        margin-bottom: 0;
+    }
+        .title--page:after{
+            display: none;
+        }
+
+        @media screen and (min-width:768px){
+            .title--page{
+                font-size: 3.5rem;
+            }
+        }
 
 
     .title--white{
