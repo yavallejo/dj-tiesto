@@ -197,20 +197,55 @@ a{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        margin-top: 3rem;
+        margin-top: 1rem;
+        
     }
 
         .festivalMusic__specials .numberEvents__item{
-            margin: 1rem 3rem;
-        }
-
-        .festivalMusic__specials .numberEvents__item:nth-child(even){
-            margin-right: 0;            
-        }
+            margin: 1rem 0;
+            width: 46%;
+        }        
 
         .festivalMusic__specials .numberEvents__item h5,
         .festivalMusic__specials .numberEvents__item h6{
             margin: 0;
+            font-size: 1.2rem;
+            color: var(--black-color);
+            font-weight: 600;
+        }
+         .festivalMusic__specials .numberEvents__item h5{
+             font-weight: 400;
+             font-family: var(--secundary-font-family);
+             font-size: 0.9rem;
+         }
+
+        @media screen and (min-width:768px){
+            .festivalMusic__specials{
+                margin-top: 1rem;                
+            }
+
+            .festivalMusic__specials .numberEvents__item h5,
+            .festivalMusic__specials .numberEvents__item h6{
+               font-size: 1.5rem;
+               margin-top: 0.3rem;
+                
+            }
+            .festivalMusic__specials .numberEvents__item h5{
+                
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (min-width:1200px){
+            .festivalMusic__specials .numberEvents__item{
+                margin: 2rem 3rem;
+                width: 35%;
+            }
+
+            .festivalMusic__specials .numberEvents__item:nth-child(even){
+                margin-right: 0;
+               
+            }
         }
 
 .footer{
