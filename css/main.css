@@ -8,6 +8,7 @@
     --blue-color: #060F20;
     --white-color: #ffffff;
     --black-color: #000000;
+    --gray-color: #333333;
     /* Fonts */
     --main-font-family: 'Saira', sans-serif;
     --secundary-font-family: 'Kanit', sans-serif;
@@ -16,16 +17,15 @@
     --letter-spacing: 2px;
     --padding-section: 5rem;
 
-
 }
+
+
 
 html,
 body,
 a{
     font-family: var(--main-font-family);
 }
-
-
 
 .btn-primary,
 .btn-primary:not(:disabled):not(.disabled):active,
@@ -47,6 +47,18 @@ a{
        box-shadow: 0 0 0 0.2rem var(--main-bg-color);
     }
 
+
+.boxImage{
+    border-width: 5px;
+    border-style: solid;
+    border-image:linear-gradient(to bottom, #FF225C 0%, #0372F4 100%);
+    border-image-slice:1;
+}
+    @media screen and (min-width:768px){
+        .boxImage img{
+            transform: translate(20px,20px)
+        }
+    }
 
 .boxSection{
     padding-bottom:var(--padding-section);
@@ -159,10 +171,21 @@ a{
     opacity: 0.9;
 }
 
-.djs{
-    
+.djs{    
     position: relative;
 }
+    .djs__centerMobile{
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        @media screen and (min-width:768px){
+            .djs__centerMobile{
+                max-width: 100%;
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+        }
     .djs__gallery{
        
     }
@@ -188,6 +211,21 @@ a{
         .djs__information p{
             margin-top: 4rem;
         }
+    }
+
+    .djs__name{
+        font-family: var(--secundary-font-family);
+        color: var(--black-color);
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-bottom: 0;
+    }
+
+    .djs__type{
+        font-family: var(--secundary-font-family);
+        font-weight: 300;
+        color: var(--gray-color);
+        font-size: 0.9rem;
     }
 
 .festivalMusic{
@@ -469,6 +507,35 @@ a{
             height: calc(100% - 300px);
             
         }
+
+.instagramBox{
+    background-color: var(--main-bg-color);    
+    color: var(--white-color);
+    padding: 1rem;
+    font-family: var(--main-font-family);
+    text-align: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing);
+    
+}
+    .instagramBox span:first-child{
+        font-weight: 600;
+        font-size: 2.9rem;
+        text-transform: initial;
+    }
+        @media screen and (min-width:768px){
+            .instagramBox{
+                position: absolute;
+                left: 25%;
+                top: 38%;
+                padding: 1rem 5rem;
+            }
+            .instagramBox span:first-child{
+                font-size: 3rem;
+            }
+        }
+
     
    
 
@@ -548,6 +615,10 @@ a{
                    font-size:1.75rem;
                 }
             }
+
+.position-relative{
+    position: relative;
+}
 
     .navbar-absolute{
         position: absolute;
@@ -654,6 +725,39 @@ a{
             margin-bottom: 0;
             margin-top: 1rem;
         }
+
+@media screen and (min-width:768px){
+    .modal-dialog{
+        max-width: 95%;
+    }
+}
+
+@media screen and (min-width:1200px){
+    .modal-dialog{
+        max-width: 70%;
+    }
+}
+
+.modal-content{
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    font-family: var(--secundary-font-family);
+    font-weight: 300;
+    padding-bottom: calc(var(--padding-section) - 3rem);
+    padding-top: cal(var(--padding-section) - 4rem);
+}
+
+.modal-header{
+    border-bottom: 0;
+}
+
+.modal-header .close{
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+
 
 
 .sectionBorder--bottom:before{
@@ -824,3 +928,79 @@ a{
                 margin-right: 0;
             }
         }
+
+.djs__animation {
+  position: relative;
+  overflow: hidden;  
+  width: 100%;
+  background: var(--main-bg-color);
+  background: -moz-linear-gradient(90deg, var(--main-bg-color) 0%, var(--secundary-color) 100%, var(--secundary-color) 100%);
+  background: -webkit-linear-gradient(90deg, var(--main-bg-color) 0%, var(--secundary-color) 100%, var(--secundary-color) 100%);
+  background: linear-gradient(90deg, var(--main-bg-color) 0%, var(--secundary-color) 100%, var(--secundary-color) 100%);
+}
+
+.djs__animation img,
+.djs__animation:before,
+.djs__animation:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.djs__animation img {
+  max-width: 100%;
+  backface-visibility: hidden;
+  vertical-align: top;
+}
+
+.djs__animation:before,
+.djs__animation:after {
+  content: '';
+  background-color: #fff;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.djs__animation:before {
+  width: 60px;
+  height: 1px;
+  left: 100%;
+}
+
+.djs__animation:after {
+  height: 60px;
+  width: 1px;
+  top: 0%;
+}
+
+.djs__animation a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.djs__animation:hover img,
+.djs__animation.hover img {
+  zoom: 1;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  opacity: 0.5;
+}
+
+.djs__animation:hover:before,
+.djs__animation.hover:before,
+.djs__animation:hover:after,
+.djs__animation.hover:after {
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+}
