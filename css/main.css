@@ -79,10 +79,10 @@ a{
         }
 
 .boxImage{
-    border-image-slice: 1;
-    border-image: linear-gradient(to left, #2a66de 0%, #fd225a 100%);
-    border-style: solid;
     border-width: 5px;
+    border-style: solid;
+    border-image:linear-gradient(to bottom, #FF225C 0%, #0372F4 100%);
+    border-image-slice:1;
 }
     @media screen and (min-width:768px){
         .boxImage img{
