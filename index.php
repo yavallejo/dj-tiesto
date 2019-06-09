@@ -1,62 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,500,700|Saira:300,400,500,700" rel="stylesheet">
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css" />
-    <!-- Add the slick-theme.css if you want default styling -->
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick-theme.css" />
-    <link rel="stylesheet" href="css/main.css">
-    <title>DJ-Tiestos</title>
-</head>
-<body>
-    <header class="header">
-        <div class="container pt-1 pt-md-4 header__top">
-            <nav class="navbar navbar-expand-lg">
-                <a class="navbar-brand" href="index.html">
-                    <img class="img-fluid" src="img/logo-wp-festival.png" alt="WP Music Festival">
-                </a>
-                <button class="navbar-toggler js-custom-toggler custom-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span> </span>
-                    <span> </span>
-                    <span> </span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav text-center">
-                        <a class="nav-item nav-link active" href="wp-festival.html">WP Festival</a>
-                        <a class="nav-item nav-link" href="djs.html">DJS</a>
-                        <a class="nav-item nav-link" href="presentaciones.html">Presentaciones</a>
-                        <a class="nav-item nav-link" href="blog.html">Blog</a>
-                        <a class="nav-item nav-link" href="contacto.html">Contacto</a>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="container header__bottom">
-            <ul class="header__meta list-inline d-flex">
-                <li><img src="img/icon_date.png" alt="21 Sept 2018"> 21 Sept 2018</li>
-                <li><img src="img/icon_headphones.png" alt="24 Djs"> 24 Djs</li>
-                <li><img src="img/icon_ticket.png" alt="3000 Entradas"> 3000 Entradas</li>
-            </ul>
-            <div class="header__information">
-                <h2>
-                    <strong>WP</strong> Festival Music <strong>Bogotá</strong> 2018
-                </h2>
-                <p class="mb-0 mt-4 mt-md-0 pl-3 pr-3 p-md-0">Bogotá <strong>WP Festival Music</strong> es un Evento de música electrónica con Djs que estan dentro del Top 20 en el mundo.
-                </p>
-                <p class="d-none d-md-block mt-0">Luces, buena música y los mejores Djs.</p>
-                <div class="header__btn">
-                    <a href="#" class="btn btn-primary btn-lg mt-5 mt-md-3">Comprar Tickets</a>
-                </div>
-            </div>            
-        </div>
-    </header> <!--Header-->
+<?php get_header(); ?>
     <main class="main">
         <section class="presentations sectionBorder sectionBorder--bottom paddingSection">
             <article class="container">
@@ -73,7 +15,7 @@
                     <div class="presentations__details--information col col-md-2">22:00</div>
                     <div class="presentations__details--information col col-md-2">Dj Monza</div>
                     <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="img/dj-kuramizagui-presentations.png" alt="Dj Kuramizagui" width="130" height="144">
+                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-kuramizagui-presentations.png" alt="Dj Kuramizagui" width="130" height="144">
                     </div>
                     <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
                     <div class="presentations__details--information col col-md-3 d-flex">
@@ -85,7 +27,7 @@
                     <div class="presentations__details--information col col-md-2">23:00</div>
                     <div class="presentations__details--information col col-md-2">Kura</div>
                     <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="img/dj-kura-presentations.png" alt="Dj Kura" width="130" height="144">
+                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-kura-presentations.png" alt="Dj Kura" width="130" height="144">
                     </div>
                     <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
                     <div class="presentations__details--information col col-md-3 d-flex ">
@@ -97,7 +39,7 @@
                     <div class="presentations__details--information col col-md-2">22:00</div>
                     <div class="presentations__details--information col col-md-2">Dj Monza</div>
                     <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="img/dj-monza-presentations.png" alt="Dj Monza" width="130" height="144">
+                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-monza-presentations.png" alt="Dj Monza" width="130" height="144">
                     </div>
                     <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
                     <div class="presentations__details--information col col-md-3 d-flex ">
@@ -109,7 +51,7 @@
                     <div class="presentations__details--information col col-md-2">22:00</div>
                     <div class="presentations__details--information col col-md-2">Dj Torino</div>
                     <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="img/dj-torino-presentations.png" alt="Dj Torino" width="130" height="144">
+                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-torino-presentations.png" alt="Dj Torino" width="130" height="144">
                     </div>
                     <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
                     <div class="presentations__details--information col col-md-3 d-flex ">
@@ -121,7 +63,7 @@
                     <div class="presentations__details--information col col-md-2">22:00</div>
                     <div class="presentations__details--information col col-md-2">Dj Yan</div>
                     <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="img/dj-yan-presentations.png" alt="Dj Yan" width="130" height="144">
+                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-yan-presentations.png" alt="Dj Yan" width="130" height="144">
                     </div>
                     <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
                     <div class="presentations__details--information col col-md-3 d-flex ">
@@ -138,22 +80,22 @@
             <div class="container">
                 <article class="row justify-content-between align-items-center">
                     <div class="numberEvents__item">
-                        <img src="img/icon_lights.png" alt="2000 Luces Increibles">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_lights.png" alt="2000 Luces Increibles">
                         <h6>2000</h6>
                         <h5>Luces Increibles</h5>
                     </div>
                     <div class="numberEvents__item">
-                        <img src="img/icon_djs.png" alt="12 Djs Top Mundial">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_djs.png" alt="12 Djs Top Mundial">
                         <h6>12</h6>
                         <h5>Djs Top Mundial</h5>
                     </div>
                     <div class="numberEvents__item">
-                        <img src="img/icon_music_hours.png" alt="1000 Horas de Música">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_music_hours.png" alt="1000 Horas de Música">
                         <h6>1000</h6>
                         <h5>Horas de Música</h5>
                     </div>
                     <div class="numberEvents__item">
-                        <img src="img/icon_assistens.png" alt="10000 Asistentes">
+                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_assistens.png" alt="10000 Asistentes">
                         <h6>10000</h6>
                         <h5>Asistentes</h5>
                     </div>
@@ -167,7 +109,7 @@
                         <ul class="list-unstyled djs__gallery">
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj_alexio.png" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj_alexio.png" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Alexio</h5>
                                         <h6 class="djs__type">Electro hop</h6>
@@ -176,7 +118,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj_caroline.png" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj_caroline.png" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Caroline</h5>
                                         <h6 class="djs__type">Electro house</h6>
@@ -185,7 +127,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj_sabrina.png" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj_sabrina.png" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Sabrina</h5>
                                         <h6 class="djs__type">Grime music‎</h6>
@@ -194,7 +136,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj-caroline.jpg" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-caroline.jpg" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Caroline</h5>
                                         <h6 class="djs__type">Trip hop‎</h6>
@@ -203,7 +145,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj-mager.jpg" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-mager.jpg" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Mager</h5>
                                         <h6 class="djs__type">Future bass</h6>
@@ -212,7 +154,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj-krakenas.jpg" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-krakenas.jpg" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Krakenas</h5>
                                         <h6 class="djs__type">Krautrock</h6>
@@ -221,7 +163,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj-murdock.jpg" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-murdock.jpg" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Murdock</h5>
                                         <h6 class="djs__type">Synthwave</h6>
@@ -230,7 +172,7 @@
                             </li>
                             <li>
                                 <figure>
-                                    <img class="img-fluid" src="img/dj-isabella.jpg" alt="DJ">
+                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-isabella.jpg" alt="DJ">
                                     <figcaption>
                                         <h5 class="djs__name">DJ Isabella</h5>
                                         <h6 class="djs__type">Soundscape</h6>
@@ -244,10 +186,10 @@
                         <p>Ellos son el verdadero foco de atención de nuestro evento</p>
                         <ul class="d-flex list-unstyled justify-content-center justify-content-md-end mb-4">
                             <li class="mr-2">
-                                <a href="javascript:void(0);" class="JS-slick-next"><img src="img/icon_left_slick.png" alt="" class=""></a>
+                                <a href="javascript:void(0);" class="JS-slick-next"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_left_slick.png" alt="" class=""></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="JS-slick-prev"><img src="img/icon_right_slick.png" alt=""></a>
+                                <a href="javascript:void(0);" class="JS-slick-prev"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_right_slick.png" alt=""></a>
                             </li>
                         </ul>
                         <a href="#" class="btn btn-primary d-none mt-5 d-md-inline-block">Ver Todos</a>
@@ -262,7 +204,7 @@
                 <div class="row">
                     <div class="col tickets__price ml-lg-0">
                         <ul class="list-unstyled d-flex justify-content-center tickets__value">
-                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
                         </ul>
                         <h4 class="text-uppercase text--red">BPM</h4>
                         <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
@@ -276,9 +218,9 @@
                     </div>
                     <div class="col tickets__price">
                         <ul class="list-unstyled d-flex justify-content-center tickets__value">
-                            <li><img alt="" src="img/icon_tickets.png"></li>
-                            <li><img alt="" src="img/icon_tickets.png"></li>
-                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
                         </ul>
                         <h4 class="text-uppercase text--pink">Echo</h4>
                         <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
@@ -292,11 +234,11 @@
                     </div>
                     <div class="col tickets__price mr-lg-0">
                         <ul class="list-unstyled d-flex justify-content-center tickets__value">
-                            <li><img alt="" src="img/icon_tickets.png"></li>
-                            <li><img alt="" src="img/icon_tickets.png"></li>
-                            <li><img alt="" src="img/icon_tickets.png"></li>
-                            <li><img alt="" src="img/icon_tickets.png"></li>
-                            <li><img alt="" src="img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
+                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
                         </ul>
                         <h4 class="text-uppercase text--purple">Loop</h4>
                         <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
@@ -317,21 +259,21 @@
                 <div class="row">
                    <div class="col-12 col-md-10 order-2 order-md-0 mt-5 mt-md-0">
                         <div class="sponsors__gallery">
-                            <div><img class="img-fluid" src="img/sponsor_babis_beats.png" alt="Sponsor"></div>
-                            <div><img class="img-fluid" src="img/sponsor_discoman.png" alt="Sponsor"></div>
-                            <div><img class="img-fluid" src="img/sponsor_gipsod.png" alt="Sponsor"></div>
-                            <div><img class="img-fluid" src="img/sponsor_los_angeles.png" alt="Sponsor"></div>
-                            <div><img class="img-fluid" src="img/sponsor_stan.png" alt="Sponsor"></div>
-                            <div><img class="img-fluid" src="img/sponsor_street_wear_shop.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/sponsor_babis_beats.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/sponsor_discoman.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/sponsor_gipsod.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/sponsor_los_angeles.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/sponsor_stan.png" alt="Sponsor"></div>
+                            <div><img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/sponsor_street_wear_shop.png" alt="Sponsor"></div>
                         </div>
                    </div>
                    <div class="col-12 col-md-2 order-1 order-md-1 ">
                         <ul class="d-flex list-unstyled justify-content-center justify-content-md-end align-items-center h-100">
                             <li class="mr-2">
-                                <a href="javascript:void(0);" class="JS-slickSponsors-next"><img src="img/icon_left_slick.png" alt="" class=""></a>
+                                <a href="javascript:void(0);" class="JS-slickSponsors-next"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_left_slick.png" alt="" class=""></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" class="JS-slickSponsors-prev"><img src="img/icon_right_slick.png" alt=""></a>
+                                <a href="javascript:void(0);" class="JS-slickSponsors-prev"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_right_slick.png" alt=""></a>
                             </li>
                         </ul>
                    </div>
@@ -347,7 +289,7 @@
                 <div class="row mt-5">
                     <div class="col-6 col-md-4 p-0">
                         <figure class="gallery__animation">
-                            <img class="img-fluid" src="img/gallery_brasil.png" alt="Galeria">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_brasil.png" alt="Galeria">
                             <figcaption>
                                 <h4>WP Festival Músic</h4>
                                 <h6>Headless 2017</h6>
@@ -356,7 +298,7 @@
                     </div>
                     <div class="col-6 col-md-4 p-0">
                         <figure class="gallery__animation">
-                            <img class="img-fluid" src="img/gallery_colombia.png" alt="Galeria">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_colombia.png" alt="Galeria">
                             <figcaption>
                                 <h4>WP Festival Músic</h4>
                                 <h6>Headless 2017</h6>
@@ -365,7 +307,7 @@
                     </div>
                     <div class="col-6 col-md-4 p-0">
                         <figure class="gallery__animation">
-                            <img class="img-fluid" src="img/gallery_fabricio.png" alt="Galeria">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_fabricio.png" alt="Galeria">
                             <figcaption>
                                 <h4>WP Festival Músic</h4>
                                 <h6>Headless 2017</h6>
@@ -374,7 +316,7 @@
                     </div>
                     <div class="col-6 col-md-4 p-0">
                         <figure class="gallery__animation">
-                            <img class="img-fluid" src="img/gallery_dj.png" alt="Galeria">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_dj.png" alt="Galeria">
                             <figcaption>
                                 <h4>WP Festival Músic</h4>
                                 <h6>Headless 2017</h6>
@@ -383,7 +325,7 @@
                     </div>
                     <div class="col-6 col-md-4 p-0">
                         <figure class="gallery__animation">
-                            <img class="img-fluid" src="img/gallery_francia.png" alt="Galeria">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_francia.png" alt="Galeria">
                             <figcaption>
                                 <h4>WP Festival Músic</h4>
                                 <h6>Headless 2017</h6>
@@ -392,7 +334,7 @@
                     </div>
                     <div class="col-6 col-md-4 p-0">
                         <figure class="gallery__animation">
-                            <img class="img-fluid" src="img/gallery_tomorroland.png" alt="Galeria">
+                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_tomorroland.png" alt="Galeria">
                             <figcaption>
                                 <h4>WP Festival Músic</h4>
                                 <h6>Headless 2017</h6>
@@ -409,7 +351,7 @@
                     <div class="col-6">
                         <div class="news__item">
                             <figure>
-                                <img class="img-fluid" src="img/news_brasil.png" alt="Brasil">
+                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/news_brasil.png" alt="Brasil">
                                 <figcaption>Categoría - Sep 5</figcaption>
                             </figure>
                             <h2>Disponible la primera preventa</h2>
@@ -419,14 +361,14 @@
                     <div class="col-5 offset-1 news__item--right">
                         <div class="news__item">
                             <figure>
-                                <img class="img-fluid" src="img/news_colombia.png" alt="Brasil">
+                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/news_colombia.png" alt="Brasil">
                                 <figcaption>Categoría - Sep 5</figcaption>
                             </figure>
                             <h2>Disponible la primera preventa</h2>
                         </div>
                         <div class="news__item">
                             <figure>
-                                <img class="img-fluid" src="img/news_alexio.png" alt="Brasil">
+                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/news_alexio.png" alt="Brasil">
                                 <figcaption>Categoría - Sep 5</figcaption>
                             </figure>
                             <h2>Disponible la primera preventa</h2>
@@ -436,134 +378,5 @@
             </article>
         </section><!--End News-->
     </main>
-    <footer class="footer">
-        <div class="container-fluid pl-0 pr-0">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="d-flex flex-column justify-content-center footer__information text-center text-lg-left">
-                        <h5>WP FESTIVAL MUSIC - Bogotá</h5>
-                        <p class="d-none d-md-block mt-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                            nonumy eirmod
-                            tempor invidunt ut labore et dolore
-                            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-                            rebum.</p>
-                        <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start mt-5">
-                            <li class="mr-4"><a href=""><img src="img/icon_twitter.png" alt=""></a></li>
-                            <li class="mr-4"><a href=""><img src="img/icon_facebook.png" alt=""></a></li>
-                            <li class="mr-4"><a href=""><img src="img/icon_instagram.png" alt=""></a></li>
-                        </ul>
-                        <nav class="footer__nav">
-                            <ul class="list-unstyled  d-flex justify-content-center justify-content-lg-start">
-                                <li class="mr-3"><a href="#">WP FESTIVAL</a></li>
-                                <li class="mr-3"><a href="#">DJS</a></li>
-                                <li class="mr-3"><a href="#">Presentaciones</a></li>
-                                <li class="mr-3"><a href="#">Blog</a></li>
-                                <li class="mr-3"><a href="#">Contacto</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
+<?php get_footer(); ?>
     
-                <div class="col-lg-6 d-none d-lg-block">
-                    <img src="img/mapa.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('[data-target="#navbarNavAltMarkup"]').click(function () {
-                
-                $('.navbar-expand-lg').toggleClass('relative');
-                $('.collapse').addClass('navbar-absolute');
-            });
-
-            // Slick  Settings
-
-             $('.djs__gallery').slick({
-                 autoplay: true,
-                 infinite: true,
-                 slidesToShow: 3,
-                 slidesToScroll: 3,
-                 responsive: [
-                     {
-                         breakpoint: 768,
-                         settings: {
-                             arrows: false,
-                             centerMode: true,
-                             centerPadding: '40px',
-                             slidesToShow: 2
-                         }
-                     },
-                     {
-                         breakpoint: 480,
-                         settings: {
-                             arrows: false,
-                             centerMode: true,
-                             centerPadding: '40px',
-                             slidesToShow: 1
-                         }
-                     }
-                 ]
-             });
-
-             // Slick Navigation
-
-            $('.JS-slick-next').click(function () {
-                $(".djs__gallery").slick("slickNext");
-            });
-            $('.JS-slick-prev').click(function () {
-                $(".djs__gallery").slick("slickPrev");
-            });
-
-
-            // ---------------------------------------------------
-             
-             
-             
-             $('.sponsors__gallery').slick({
-                autoplay: true,
-                infinite: true,
-                slidesToShow: 3,
-                slidesToScroll: 3,
-                arrows: false,
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 3
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            arrows: false,
-                            centerMode: true,
-                            centerPadding: '40px',
-                            slidesToShow: 2
-                        }
-                    }
-                ]
-            });
-
-            // Slick Navigation
-
-            $('.JS-slickSponsors-next').click(function () {
-                $(".sponsors__gallery").slick("slickNext");
-            });
-            $('.JS-slickSponsors-prev').click(function () {
-                $(".sponsors__gallery").slick("slickPrev");
-            });
-            
-            
-        });
-    </script>
-</body>
-</html>
