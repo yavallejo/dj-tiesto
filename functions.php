@@ -9,5 +9,9 @@
      */
     require get_template_directory() . '/inc/admin.php';
 
-    // Pendiente
-    add_theme_support( 'post-thumbnails' );
+    /**
+     * Support theme
+     */
+    require get_template_directory() . '/inc/support.php';
+
+    
