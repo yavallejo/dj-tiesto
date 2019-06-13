@@ -14,4 +14,7 @@
      */
     require get_template_directory() . '/inc/support.php';
 
-    
+    /**
+     * Disabled Gutenberg
+     */
+    require get_template_directory() . '/inc/gutenberg.php';

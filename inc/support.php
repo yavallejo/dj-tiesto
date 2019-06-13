@@ -22,5 +22,4 @@ add_action( 'after_setup_theme', 'djtiesto_custom_logo' );
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 // Title Tag
-
 add_theme_support( 'title-tag' );
