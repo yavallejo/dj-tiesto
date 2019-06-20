@@ -1,81 +1,122 @@
 <?php get_header(); ?>
     <main class="main">
-        <section class="presentations sectionBorder sectionBorder--bottom paddingSection">
-            <article class="container">
-                <h2 class="title title--white">Presentaciones</h2>
-                <p>Aquí encontrarás los detalles de las presentaciones horarios, djs, escenario y la posibilidad de comprar tickets</p>
-                <div class="presentations__details row mt-5">
-                    <div class="presentations__details--title col col-md-2">Hora</div>
-                    <div class="presentations__details--title col col-md-2">DJ</div>
-                    <div class="presentations__details--title col col-md-3 d-none d-lg-block"></div>
-                    <div class="presentations__details--title col col-md-2 d-none d-lg-block">Escenario</div>
-                    <div class="presentations__details--title col col-md-3">Ticket</div>
-                </div> <!--Titulo de las presentaciones-->
-                <div class="presentations__details row align-items-center mt-3">
-                    <div class="presentations__details--information col col-md-2">22:00</div>
-                    <div class="presentations__details--information col col-md-2">Dj Monza</div>
-                    <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-kuramizagui-presentations.png" alt="Dj Kuramizagui" width="130" height="144">
+        <?php 
+        $prestentationbool= get_field('po_prese_mostrar_seccion', 'option');
+        if($prestentationbool){
+        ?>
+            <section class="presentations sectionBorder sectionBorder--bottom paddingSection"
+                <?php if ( get_field('po_prese_imagen_fondo', 'option') ) : ?>
+                style="background-image:url('<?php echo get_field('po_prese_imagen_fondo', 'option'); ?>')" <?php endif; ?> >       
+                <article class="container">
+                    <?php if ( get_field('po_prese_titulo', 'option') ) : ?>                    
+                        <h2 class="title title--white"><?php echo get_field('po_prese_titulo', 'option'); ?></h2>
+                    <?php endif; ?>
+                    <?php if ( get_field('po_prese_descripcion', 'option') ) : ?>
+                        <p><?php echo get_field('po_prese_descripcion', 'option'); ?></p>
+                    <?php endif; ?>
+                    
+                    <div class="presentations__details row mt-5">
+                        <div class="presentations__details--title col col-md-2">Hora</div>
+                        <div class="presentations__details--title col col-md-2">DJ</div>
+                        <div class="presentations__details--title col col-md-3 d-none d-lg-block"></div>
+                        <div class="presentations__details--title col col-md-2 d-none d-lg-block">Escenario</div>
+                        <div class="presentations__details--title col col-md-3">Ticket</div>
+                    </div> <!--Titulo de las presentaciones-->
+
+                    <?php
+
+                        // The Query
+                        $args = array(
+                                    'post_type' => 'presentaciones',
+                                    'posts_per_page' => 5
+                                );
+                        $the_query = new WP_Query( $args );
+
+                        // The Loop
+                        if ( $the_query->have_posts() ) {
+                            
+                            while ( $the_query->have_posts() ) {
+                                $the_query->the_post();
+                    ?>
+                                <div class="presentations__details row align-items-center mt-3">
+                                    <div class="presentations__details--information col col-md-2">
+                                        <?php if ( get_field('prese_hora') ) : ?>
+                                            <?php echo get_field('prese_hora'); ?>
+                                            <?php else:?>
+                                            <?php echo "Pendiente"; ?>
+                                        <?php endif; ?>
+                                        
+                                    </div>
+                                    <div class="presentations__details--information col col-md-2"><?php the_title();?></div>
+                                    <div class="presentations__details--information col col-md-3 d-none d-lg-block">
+
+                                        <?php
+                                            if ( has_post_thumbnail() ) { 
+                                                the_post_thumbnail('full', ['class' => 'img-fluid']);
+                                            }else{
+                                                ?>
+                                                <img class="img-fluid" src="https://via.placeholder.com/150x164.jpg/FD275F/FFFFFF" alt="Dj Default">
+                                                <?php
+                                            }
+                                        ?>
+
+                                        
+                                    </div>
+                                    <div class="presentations__details--information col col-md-2 d-none d-lg-block">
+                                        <?php if ( get_field('prese_escenario') ) : ?>
+                                            <?php echo get_field('prese_escenario'); ?>
+                                            <?php else:?>
+                                            <?php echo "Pendiente"; ?>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="presentations__details--information col col-md-3 d-flex">
+                                        <a class="btn btn-primary mr-3 d-none d-lg-block"
+                                           target="_blank"
+                                           href="<?php if ( get_field('prese_link_detalles') ) : ?>
+                                                    <?php echo get_field('prese_link_detalles'); ?>
+                                                    <?php else:?>
+                                                    <?php echo "#"; ?>
+                                                <?php endif; ?>">
+                                           Detalles
+                                        </a>
+                                        <a class="btn btn-primary"
+                                           target="_blank"
+                                           href="<?php if ( get_field('prese_link_tickets') ) : ?>
+                                                    <?php echo get_field('prese_link_tickets'); ?>
+                                                    <?php else:?>
+                                                    <?php echo "#"; ?>
+                                                <?php endif; ?>">
+                                           Tickets
+                                        </a>
+                                    </div>
+                                </div> <!--Descripción presentaciones-->
+                    <?php
+                                
+                            }
+                            
+                            /* Restore original Post Data */
+                            wp_reset_postdata();
+                        } else {
+                            // no posts found
+                        }
+                    
+                    ?>
+                    
+                    
+                    
+
+
+
+                    <div class="row justify-content-center mt-5">
+                        <a class="btn btn-primary btn-lg" href="djs.html" id="">Ver Todas</a>
                     </div>
-                    <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
-                    <div class="presentations__details--information col col-md-3 d-flex">
-                        <a class="btn btn-primary  mr-3 d-none d-lg-block" href="#">Detalles</a>
-                        <a class="btn btn-primary" href="#">Tickets</a>
-                    </div>
-                </div> <!--Descripción presentaciones-->
-                <div class="presentations__details row align-items-center mt-3">
-                    <div class="presentations__details--information col col-md-2">23:00</div>
-                    <div class="presentations__details--information col col-md-2">Kura</div>
-                    <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-kura-presentations.png" alt="Dj Kura" width="130" height="144">
-                    </div>
-                    <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
-                    <div class="presentations__details--information col col-md-3 d-flex ">
-                        <a class="btn btn-primary mr-3 d-none d-lg-block" href="#">Detalles</a>
-                        <a class="btn btn-primary" href="#">Tickets</a>
-                    </div>
-                </div> <!--Descripción presentaciones-->
-                <div class="presentations__details row align-items-center mt-3">
-                    <div class="presentations__details--information col col-md-2">22:00</div>
-                    <div class="presentations__details--information col col-md-2">Dj Monza</div>
-                    <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-monza-presentations.png" alt="Dj Monza" width="130" height="144">
-                    </div>
-                    <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
-                    <div class="presentations__details--information col col-md-3 d-flex ">
-                        <a class="btn btn-primary mr-3 d-none d-lg-block" href="#">Detalles</a>
-                        <a class="btn btn-primary" href="#">Tickets</a>
-                    </div>
-                </div> <!--Descripción presentaciones-->
-                <div class="presentations__details row align-items-center mt-3">
-                    <div class="presentations__details--information col col-md-2">22:00</div>
-                    <div class="presentations__details--information col col-md-2">Dj Torino</div>
-                    <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-torino-presentations.png" alt="Dj Torino" width="130" height="144">
-                    </div>
-                    <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
-                    <div class="presentations__details--information col col-md-3 d-flex ">
-                        <a class="btn btn-primary mr-3 d-none d-lg-block" href="#">Detalles</a>
-                        <a class="btn btn-primary" href="#">Tickets</a>
-                    </div>
-                </div> <!--Descripción presentaciones-->
-                <div class="presentations__details row align-items-center mt-3">
-                    <div class="presentations__details--information col col-md-2">22:00</div>
-                    <div class="presentations__details--information col col-md-2">Dj Yan</div>
-                    <div class="presentations__details--information col col-md-3 d-none d-lg-block">
-                        <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-yan-presentations.png" alt="Dj Yan" width="130" height="144">
-                    </div>
-                    <div class="presentations__details--information col col-md-2 d-none d-lg-block">Principal</div>
-                    <div class="presentations__details--information col col-md-3 d-flex ">
-                        <a class="btn btn-primary mr-3 d-none d-lg-block" href="#">Detalles</a>
-                        <a class="btn btn-primary" href="#">Tickets</a>
-                    </div>
-                </div> <!--Descripción presentaciones-->
-                <div class="row justify-content-center mt-5">
-                    <a class="btn btn-primary btn-lg" href="djs.html" id="">Ver Todas</a>
-                </div>
-            </article>
-        </section> <!--End Presentaciones-->
+                </article>
+            </section> <!--End Presentaciones-->
+        <?php    
+            }             
+        ?>    
+        
+        
         <section class="numberEvents d-none d-lg-block paddingSection">
             <div class="container">
                 <article class="row justify-content-between align-items-center">
