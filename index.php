@@ -120,26 +120,46 @@
         <section class="numberEvents d-none d-lg-block paddingSection">
             <div class="container">
                 <article class="row justify-content-between align-items-center">
-                    <div class="numberEvents__item">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_lights.png" alt="2000 Luces Increibles">
-                        <h6>2000</h6>
-                        <h5>Luces Increibles</h5>
-                    </div>
-                    <div class="numberEvents__item">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_djs.png" alt="12 Djs Top Mundial">
-                        <h6>12</h6>
-                        <h5>Djs Top Mundial</h5>
-                    </div>
-                    <div class="numberEvents__item">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_music_hours.png" alt="1000 Horas de Música">
-                        <h6>1000</h6>
-                        <h5>Horas de Música</h5>
-                    </div>
-                    <div class="numberEvents__item">
-                        <img src="<?php bloginfo('template_directory');?>/assets/img/icon_assistens.png" alt="10000 Asistentes">
-                        <h6>10000</h6>
-                        <h5>Asistentes</h5>
-                    </div>
+
+                    <?php
+
+                    // check if the repeater field has rows of data
+                    if( have_rows('po_rp_esta_item','option') ):
+
+                        // loop through the rows of data
+                        while ( have_rows('po_rp_esta_item','option') ) : the_row();
+
+                    ?>
+                        <div class="numberEvents__item">
+
+                            <?php if ( get_sub_field('po_rp_esta_icono', 'option') ) : ?>
+                                <img src="<?php the_sub_field('po_rp_esta_icono', 'option'); ?>" alt="<?php the_sub_field('po_rp_esta_titulo', 'option'); ?>">
+                            <?php endif; ?>
+
+                            <?php if ( get_sub_field('po_rp_esta_valor', 'option') ) : ?>
+                                <h6><?php the_sub_field('po_rp_esta_valor', 'option'); ?></h6>
+                            <?php endif; ?>
+                            
+                            <?php if ( get_sub_field('po_rp_esta_titulo', 'option') ) : ?>
+                                <h5><?php the_sub_field('po_rp_esta_titulo', 'option'); ?></h5>
+                            <?php endif; ?>
+
+                            
+                            
+                            
+                        </div>
+                    <?php
+
+                    endwhile;
+
+                    else :
+
+                        // no rows found
+
+                    endif;
+
+                    ?>
+                    
                 </article>
             </div>
         </section> <!--End NumberEvents-->

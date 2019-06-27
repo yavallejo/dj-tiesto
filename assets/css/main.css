@@ -511,6 +511,13 @@ a{
                 }
             }
 
+    @media screen and (min-width:1367px){
+        .footer .container-fluid,
+        .gallery .container-fluid{
+            max-width: 1140px;
+        }
+    }
+
         
 
 .header{
