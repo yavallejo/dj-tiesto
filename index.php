@@ -116,53 +116,40 @@
             }             
         ?>    
         
+        <?php if ( get_field('po_esta_mostrar_seccion', 'option') ) : ?>
+            <section class="numberEvents d-none d-lg-block paddingSection">
+                <div class="container">
+                    <article class="row justify-content-between align-items-center">
+                        <?php
+                        // check if the repeater field has rows of data
+                        if( have_rows('po_rp_esta_item','option') ):
+                            // loop through the rows of data
+                            while ( have_rows('po_rp_esta_item','option') ) : the_row();
+                        ?>
+                            <div class="numberEvents__item">
+                                <?php if ( get_sub_field('po_rp_esta_icono', 'option') ) : ?>
+                                    <img src="<?php the_sub_field('po_rp_esta_icono', 'option'); ?>" alt="<?php the_sub_field('po_rp_esta_titulo', 'option'); ?>">
+                                <?php endif; ?>
+                                <?php if ( get_sub_field('po_rp_esta_valor', 'option') ) : ?>
+                                    <h6><?php the_sub_field('po_rp_esta_valor', 'option'); ?></h6>
+                                <?php endif; ?>                            
+                                <?php if ( get_sub_field('po_rp_esta_titulo', 'option') ) : ?>
+                                    <h5><?php the_sub_field('po_rp_esta_titulo', 'option'); ?></h5>
+                                <?php endif; ?>
+                            </div>
+                        <?php
+                            endwhile;
+                        else :
+                            echo "no tenemos contenido para mostrar en esta sección";
+                        endif;
+                        ?>                    
+                    </article>
+                </div>
+            </section> <!--End NumberEvents-->
+        <?php endif; ?>
         
-        <section class="numberEvents d-none d-lg-block paddingSection">
-            <div class="container">
-                <article class="row justify-content-between align-items-center">
+        
 
-                    <?php
-
-                    // check if the repeater field has rows of data
-                    if( have_rows('po_rp_esta_item','option') ):
-
-                        // loop through the rows of data
-                        while ( have_rows('po_rp_esta_item','option') ) : the_row();
-
-                    ?>
-                        <div class="numberEvents__item">
-
-                            <?php if ( get_sub_field('po_rp_esta_icono', 'option') ) : ?>
-                                <img src="<?php the_sub_field('po_rp_esta_icono', 'option'); ?>" alt="<?php the_sub_field('po_rp_esta_titulo', 'option'); ?>">
-                            <?php endif; ?>
-
-                            <?php if ( get_sub_field('po_rp_esta_valor', 'option') ) : ?>
-                                <h6><?php the_sub_field('po_rp_esta_valor', 'option'); ?></h6>
-                            <?php endif; ?>
-                            
-                            <?php if ( get_sub_field('po_rp_esta_titulo', 'option') ) : ?>
-                                <h5><?php the_sub_field('po_rp_esta_titulo', 'option'); ?></h5>
-                            <?php endif; ?>
-
-                            
-                            
-                            
-                        </div>
-                    <?php
-
-                    endwhile;
-
-                    else :
-
-                        // no rows found
-
-                    endif;
-
-                    ?>
-                    
-                </article>
-            </div>
-        </section> <!--End NumberEvents-->
         <section class="djs sectionBorder--top sectionBorder--bottom paddingSection">
             <div class="container">
                 <article class="row">
