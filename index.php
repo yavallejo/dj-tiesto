@@ -212,67 +212,89 @@
             </section> <!--End DJS-->
         <?php endif; ?>
         
-        
-        
-        
-        
-        
-        <section class="tickets paddingSection">
-            <article class="container">
-                <h2 class="title title--white">Tickets</h2>
-                <p class="subtitle">Tenemos varias opciones para todos los gustos, consigue una que se adapte a ti.</p>
-                <div class="row">
-                    <div class="col tickets__price ml-lg-0">
-                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                        </ul>
-                        <h4 class="text-uppercase text--red">BPM</h4>
-                        <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
-                        <span class="tickets__number">40</span>
-                        <ul class="list-unstyled list-square text-left pl-4 pr-4 pt-2">
-                            <li>Escenario Principal</li>
-                            <li>Camiseta - 1 Bebida</li>
-                            <li>Acceso Zonas comunes</li>
-                        </ul>
-                        <a href="#" id="" class="btn btn-primary">Comprar</a>
+
+       <?php if ( get_field('po_ticket_mostrar_seccion', 'option') ) : ?>
+            <section class="tickets paddingSection">
+                <article class="container">
+                    <?php if ( get_field('po_ticket_mostrar_titulo', 'option') ) : ?>
+                        <h2 class="title title--white"><?php echo get_field('po_ticket_mostrar_titulo', 'option'); ?></h2>
+                    <?php endif; ?>
+                    <?php if ( get_field('po_ticket_mostrar_descripcion', 'option') ) : ?>
+                        <p class="subtitle"><?php echo get_field('po_ticket_mostrar_descripcion', 'option'); ?></p>
+                    <?php endif; ?>
+                    
+                    
+                    <div class="row">
+                        <?php
+                            $args = array(
+                                            'post_type' => 'tickets',
+                                            'posts_per_page' => 3
+                                        );
+                            // The Query
+                            $the_query = new WP_Query( $args );
+
+                            // The Loop
+                            if ( $the_query->have_posts() ) {
+                                $flag = 1;
+                                while ( $the_query->have_posts() ) {
+                                    $the_query->the_post();
+                        ?>
+                                    <div class="col tickets__price <?php if ($flag === 1) { echo "ml-lg-0"; }else if($flag === 3){ echo "mr-lg-0"; } else { echo "";} ?>">
+                                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
+                                            <?php
+                                                $ticketPuntuacion = get_field('tickets_puntuacion');
+                                                for ($i=0; $i < $ticketPuntuacion; $i++) { 
+                                            ?>
+                                                    <li>
+                                                        <img alt="" src="<?php the_field('tickets_icono');?>">
+                                                    </li>
+                                            <?php
+                                                }                                            
+                                            ?>
+                                        </ul>
+                                        <h4 class="text-uppercase <?php if ($flag === 1) { echo "text--red"; }else if($flag === 3){ echo "text--purple"; } else { echo "text--pink";} ?>"><?php the_title(); ?></h4>
+                                        <?php if ( get_field('tickets_descripcion') ) : ?>
+                                            <p><?php the_field('tickets_descripcion'); ?></p>
+                                        <?php endif; ?>
+                                        <?php if ( get_field('tickets_precio') ) : ?>
+                                            <span class="tickets__number"><?php echo get_field('tickets_precio'); ?></span>
+                                        <?php else: ?>
+                                             <span class="tickets__number">0</span>
+                                        <?php endif; ?>
+                                            
+                                        
+                                        <ul class="list-unstyled list-square text-left pl-4 pr-4 pt-2">
+                                            <?php if ( have_rows('tickets_rp_caracteristicas') ) : ?>
+                                            
+                                                <?php while( have_rows('tickets_rp_caracteristicas') ) : the_row(); ?>
+                                            
+                                                    <li><?php the_sub_field('tickets_rp_item'); ?></li>
+                                            
+                                                <?php endwhile; ?>
+                                            
+                                            <?php endif; ?>
+                                        </ul>
+                                        <a href="<?php the_field('tickets_link_pagar'); ?>" id="" class="btn btn-primary">Comprar</a>
+                                    </div>
+                        <?php
+                                $flag++;
+                                }
+                                
+                                /* Restore original Post Data */
+                                wp_reset_postdata();
+                            } else {
+                                // no posts found
+                            }
+                        ?>
+                        
                     </div>
-                    <div class="col tickets__price">
-                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                        </ul>
-                        <h4 class="text-uppercase text--pink">Echo</h4>
-                        <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
-                        <span class="tickets__number">40</span>
-                        <ul class="list-unstyled list-square text-left pl-4 pr-4 pt-2">
-                            <li>Escenario Principal</li>
-                            <li>Camiseta - 1 Bebida</li>
-                            <li>Acceso Zonas comunes</li>
-                        </ul>
-                        <a href="#" id="" class="btn btn-primary">Comprar</a>
-                    </div>
-                    <div class="col tickets__price mr-lg-0">
-                        <ul class="list-unstyled d-flex justify-content-center tickets__value">
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                            <li><img alt="" src="<?php bloginfo('template_directory');?>/assets/img/icon_tickets.png"></li>
-                        </ul>
-                        <h4 class="text-uppercase text--purple">Loop</h4>
-                        <p>Ubicación e graderia, acceso por la zona norte del establecimiento</p>
-                        <span class="tickets__number">40</span>
-                        <ul class="list-square list-unstyled text-left pl-4 pr-4 pt-2">
-                            <li>Escenario Principal</li>
-                            <li>Camiseta - 1 Bebida</li>
-                            <li>Acceso Zonas comunes</li>
-                        </ul>
-                        <a href="#" id="" class="btn btn-primary">Comprar</a>
-                    </div>
-                </div>
-            </article>
-        </section> <!--End Tickets-->
+                </article>
+            </section> <!--End Tickets-->
+       <?php endif; ?>
+        
+        
+
+
         <section class="sponsors paddingSection">
             <div class="container">
                 <h2 class="title title--white title--small text-md-right">Patrocinadores</h2>
