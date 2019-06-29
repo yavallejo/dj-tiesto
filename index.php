@@ -55,7 +55,7 @@
                                                 the_post_thumbnail('full', ['class' => 'img-fluid']);
                                             }else{
                                                 ?>
-                                                <img class="img-fluid" src="https://via.placeholder.com/150x164.jpg/FD275F/FFFFFF" alt="Dj Default">
+                                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/placeholder-dj.jpg" alt="WP Festival">
                                                 <?php
                                             }
                                         ?>
@@ -149,102 +149,74 @@
         <?php endif; ?>
         
         
-
-        <section class="djs sectionBorder--top sectionBorder--bottom paddingSection">
-            <div class="container">
-                <article class="row">
-                    <div class="col-md-9 pl-0 order-1 order-md-0">
-                        <ul class="list-unstyled djs__gallery">
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj_alexio.png" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Alexio</h5>
-                                        <h6 class="djs__type">Electro hop</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj_caroline.png" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Caroline</h5>
-                                        <h6 class="djs__type">Electro house</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj_sabrina.png" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Sabrina</h5>
-                                        <h6 class="djs__type">Grime music‎</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-caroline.jpg" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Caroline</h5>
-                                        <h6 class="djs__type">Trip hop‎</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-mager.jpg" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Mager</h5>
-                                        <h6 class="djs__type">Future bass</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-krakenas.jpg" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Krakenas</h5>
-                                        <h6 class="djs__type">Krautrock</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-murdock.jpg" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Murdock</h5>
-                                        <h6 class="djs__type">Synthwave</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                            <li>
-                                <figure>
-                                    <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/dj-isabella.jpg" alt="DJ">
-                                    <figcaption>
-                                        <h5 class="djs__name">DJ Isabella</h5>
-                                        <h6 class="djs__type">Soundscape</h6>
-                                    </figcaption>
-                                </figure>
-                            </li>
-                        </ul>                        
-                    </div>
-                    <div class="col-md-3 text-center text-md-right order-0 djs__information">
-                        <h2 class="title title--black title--small text-md-right">DJS</h2>
-                        <p>Ellos son el verdadero foco de atención de nuestro evento</p>
-                        <ul class="d-flex list-unstyled justify-content-center justify-content-md-end mb-4">
-                            <li class="mr-2">
-                                <a href="javascript:void(0);" class="JS-slick-next"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_left_slick.png" alt="" class=""></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="JS-slick-prev"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_right_slick.png" alt=""></a>
-                            </li>
-                        </ul>
-                        <a href="#" class="btn btn-primary d-none mt-5 d-md-inline-block">Ver Todos</a>
-                    </div>
-                </article>
-            </div>
-        </section> <!--End DJS-->
+        <?php if ( get_field('po_djs_mostrar_seccion', 'option') ) : ?>
+            <section class="djs sectionBorder--top sectionBorder--bottom paddingSection">
+                <div class="container">
+                    <article class="row">
+                        <div class="col-md-9 pl-0 order-1 order-md-0">
+                            <ul class="list-unstyled djs__gallery">
+                                <?php
+                                    $args = array(
+                                                    'post_type' => 'djs',
+                                                    'posts_per_page' => 10
+                                                );
+                                    // The Query
+                                    $the_query = new WP_Query( $args );
+                                    // The Loop
+                                    if ( $the_query->have_posts() ) {
+                                        while ( $the_query->have_posts() ) {
+                                            $the_query->the_post();
+                                ?>
+                                            <li>
+                                                <figure>
+                                                    <?php if ( has_post_thumbnail() ) : ?>
+                                                      <?php  the_post_thumbnail('full', ['class' => 'img-fluid']);?>
+                                                    <?php endif; ?>
+                                                    <figcaption>
+                                                        <h5 class="djs__name"><?php the_title();?></h5>
+                                                        <?php if ( get_field('djs_genero') ) : ?>
+                                                            <h6 class="djs__type"><?php  the_field('djs_genero'); ?></h6>
+                                                        <?php endif; ?>
+                                                    </figcaption>
+                                                </figure>
+                                            </li>
+                                 <?php
+                                        }                                        
+                                        /* Restore original Post Data */
+                                        wp_reset_postdata();
+                                    } else {
+                                        // no posts found
+                                    }
+                                ?>
+                            </ul>
+                        </div>
+                        <div class="col-md-3 text-center text-md-right order-0 djs__information">
+                            <?php if ( get_field('po_djs_titulo', 'option') ) : ?>
+                                <h2 class="title title--black title--small text-md-right"><?php echo get_field('po_djs_titulo', 'option'); ?></h2>
+                            <?php endif; ?>
+                            <?php if ( get_field('po_djs_descripcion', 'option') ) : ?>
+                                <p><?php echo get_field('po_djs_descripcion', 'option'); ?></p>
+                            <?php endif; ?>                            
+                            <ul class="d-flex list-unstyled justify-content-center justify-content-md-end mb-4">
+                                <li class="mr-2">
+                                    <a href="javascript:void(0);" class="JS-slick-next"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_left_slick.png" alt="" class=""></a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="JS-slick-prev"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_right_slick.png" alt=""></a>
+                                </li>
+                            </ul>
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>djs" class="btn btn-primary d-none mt-5 d-md-inline-block">Ver Todos</a>
+                        </div>
+                    </article>
+                </div>
+            </section> <!--End DJS-->
+        <?php endif; ?>
+        
+        
+        
+        
+        
+        
         <section class="tickets paddingSection">
             <article class="container">
                 <h2 class="title title--white">Tickets</h2>
