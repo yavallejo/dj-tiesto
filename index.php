@@ -300,45 +300,36 @@
                     <?php if ( get_field('po_patroci_titulo', 'option') ) : ?>
                         <h2 class="title title--white title--small text-md-right"><?php echo get_field('po_patroci_titulo', 'option'); ?></h2>
                     <?php endif; ?>
-                    
-                    
                     <div class="row">
-                    <div class="col-12 col-md-10 order-2 order-md-0 mt-5 mt-md-0">
+                        <div class="col-12 col-md-10 order-2 order-md-0 mt-5 mt-md-0">
                             <div class="sponsors__gallery">
-
-
                                 <?php
-                                $args = array(
-                                            'post_type' => 'patrocinadores',
-                                            'posts_per_page' => 10
-                                        );
-                                // The Query
-                                $the_query = new WP_Query( $args );
-
-                                // The Loop
-                                if ( $the_query->have_posts() ) {
-                                    
-                                    while ( $the_query->have_posts() ) {
-                                        $the_query->the_post();
-                                ?>
+                                    $args = array(
+                                                'post_type' => 'patrocinadores',
+                                                'posts_per_page' => 10
+                                            );
+                                    // The Query
+                                    $the_query = new WP_Query( $args );
+                                    // The Loop
+                                    if ( $the_query->have_posts() ) {
                                         
+                                        while ( $the_query->have_posts() ) {
+                                            $the_query->the_post();
+                                ?>
                                         <div>
                                             <?php
-                                             if ( has_post_thumbnail() ) :
+                                            if ( has_post_thumbnail() ) :
                                                 the_post_thumbnail('full', ['class' => 'img-fluid']);
-                                             endif;
+                                            endif;
                                             ?>
-                                            
                                         </div>
                                 <?php
-                                }
-                                   
-                                    /* Restore original Post Data */
-                                    wp_reset_postdata();
-                                } else {
-                                    // no posts found
-                                }
-
+                                    }
+                                        /* Restore original Post Data */
+                                        wp_reset_postdata();
+                                    } else {
+                                        // no posts found
+                                    }
                                 ?>
 
 
@@ -346,17 +337,17 @@
                                 
                                 
                             </div>
-                    </div>
-                    <div class="col-12 col-md-2 order-1 order-md-1 ">
-                            <ul class="d-flex list-unstyled justify-content-center justify-content-md-end align-items-center h-100">
-                                <li class="mr-2">
-                                    <a href="javascript:void(0);" class="JS-slickSponsors-next"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_left_slick.png" alt="" class=""></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);" class="JS-slickSponsors-prev"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_right_slick.png" alt=""></a>
-                                </li>
-                            </ul>
-                    </div>
+                        </div>
+                        <div class="col-12 col-md-2 order-1 order-md-1 ">
+                                <ul class="d-flex list-unstyled justify-content-center justify-content-md-end align-items-center h-100">
+                                    <li class="mr-2">
+                                        <a href="javascript:void(0);" class="JS-slickSponsors-next"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_left_slick.png" alt="" class=""></a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="JS-slickSponsors-prev"><img src="<?php bloginfo('template_directory');?>/assets/img/icon_right_slick.png" alt=""></a>
+                                    </li>
+                                </ul>
+                        </div>
                     </div>
                 </div>
             </section> <!--End Sponsors-->
@@ -365,71 +356,68 @@
         
 
 
+        <?php if ( get_field('po_galeria_mostrar_seccion', 'option') ) : ?>
+            <section class="gallery pb-0 position-relative paddingSection">
+                <header class="container sectionBorder--top">
+                    <?php if ( get_field('po_galeria_titulo', 'option') ) : ?>
+                        <h2 class="title title--black"><?php echo get_field('po_galeria_titulo', 'option'); ?></h2>
+                    <?php endif; ?>
+                    <?php if ( get_field('po_galeria_descripcion', 'option') ) : ?>
+                        <p><?php echo get_field('po_galeria_descripcion', 'option'); ?></p>
+                    <?php endif; ?>
+                </header>
+                <article class="container-fluid">
+                    <div class="row mt-5">
+                        <?php
+                            
+                            $args = array(
+                                        'post_type' => 'galeria',
+                                        'posts_per_page'  => 1                                        
+                                    );
+                            
+                            // The Query
+                            $the_query = new WP_Query( $args );
 
-        <section class="gallery pb-0 position-relative paddingSection">
-            <header class="container sectionBorder--top">
-                <h2 class="title title--black">Galeria de imagenes</h2>
-                <p>Fotografias evento del año anterior Medellín 2017</p>
-            </header>
-            <article class="container-fluid">
-                <div class="row mt-5">
-                    <div class="col-6 col-md-4 p-0">
-                        <figure class="gallery__animation">
-                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_brasil.png" alt="Galeria">
-                            <figcaption>
-                                <h4>WP Festival Músic</h4>
-                                <h6>Headless 2017</h6>
-                            </figcaption>
-                        </figure>
+                            // The Loop
+                            if ( $the_query->have_posts() ) {
+                                        
+                                while ( $the_query->have_posts() ) {
+                                    $the_query->the_post();
+                        ?>
+                                    <?php if ( have_rows('galeria_rp_galeria') ) : ?>
+                                        <?php while( have_rows('galeria_rp_galeria') ) : the_row(); ?>
+                                            <div class="col-6 col-md-4 p-0">
+                                                <figure class="gallery__animation">
+                                                    <img class="img-fluid" src="<?php the_sub_field('galeria_rp_imagen');?>" alt="Galeria">
+                                                    <figcaption>
+                                                        <h4><?php the_sub_field('galeria_rp_titulo'); ?></h4>
+                                                        <h6><?php the_sub_field('galeria_rp_evento'); ?></h6>
+                                                    </figcaption>
+                                                </figure>
+                                            </div>                                                
+                                        <?php endwhile; ?>                                                
+                                    <?php endif; ?>                                              
+                        <?php
+                                }
+                                /* Restore original Post Data */
+                                wp_reset_postdata();
+                            } else {
+                                // no posts found
+                                   }
+                        ?>
+                        
+                        
+                        
                     </div>
-                    <div class="col-6 col-md-4 p-0">
-                        <figure class="gallery__animation">
-                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_colombia.png" alt="Galeria">
-                            <figcaption>
-                                <h4>WP Festival Músic</h4>
-                                <h6>Headless 2017</h6>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-6 col-md-4 p-0">
-                        <figure class="gallery__animation">
-                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_fabricio.png" alt="Galeria">
-                            <figcaption>
-                                <h4>WP Festival Músic</h4>
-                                <h6>Headless 2017</h6>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-6 col-md-4 p-0">
-                        <figure class="gallery__animation">
-                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_dj.png" alt="Galeria">
-                            <figcaption>
-                                <h4>WP Festival Músic</h4>
-                                <h6>Headless 2017</h6>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-6 col-md-4 p-0">
-                        <figure class="gallery__animation">
-                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_francia.png" alt="Galeria">
-                            <figcaption>
-                                <h4>WP Festival Músic</h4>
-                                <h6>Headless 2017</h6>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-6 col-md-4 p-0">
-                        <figure class="gallery__animation">
-                            <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/gallery_tomorroland.png" alt="Galeria">
-                            <figcaption>
-                                <h4>WP Festival Músic</h4>
-                                <h6>Headless 2017</h6>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </article>
-        </section> <!--End Gallery-->
+                </article>
+            </section> <!--End Gallery-->
+        <?php endif; ?>
+        
+        
+
+
+
+
         <section class="news paddingSection">
             <article class="container">
                 <h2 class="title title--white title--small text-md-right">Noticias</h2>
