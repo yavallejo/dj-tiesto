@@ -353,9 +353,6 @@
             </section> <!--End Sponsors-->
         <?php endif; ?>
         
-        
-
-
         <?php if ( get_field('po_galeria_mostrar_seccion', 'option') ) : ?>
             <section class="gallery pb-0 position-relative paddingSection">
                 <header class="container sectionBorder--top">
@@ -414,43 +411,110 @@
         <?php endif; ?>
         
         
+        <?php if ( get_field('po_noticias_mostrar_seccion', 'option') ) : ?>
+            <section class="news paddingSection" style="background-image:url('<?php the_field('po_noticias_imagen_de_fondo','option'); ?>');">
+                <article class="container">
+                    <h2 class="title title--white title--small text-md-right">
+                        <?php the_field('po_noticias_titulo','option'); ?>
+                    </h2>
+                    <div class="row mt-5">
+                        <div class="col-6">
 
+                            <?php
+                                $args = array(
+                                    'post_type' => 'post',
+                                    'posts_per_page' => 1                                    
+                                );
+                                // The Query
+                                $the_query = new WP_Query( $args );
+                                // The Loop
+                                if ( $the_query->have_posts() ) {                                    
+                                    while ( $the_query->have_posts() ) {
+                                        $the_query->the_post();
+                            ?>
+                                         <div class="news__item">
+                                            <figure>
+                                                <?php if ( has_post_thumbnail() ) : 
+                                                          the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']);
+                                                      endif;
+                                                ?>                                                
+                                                <figcaption>
+                                                    <?php
+                                                        $categories = get_the_category();
 
+                                                        if ( ! empty( $categories ) ) {
+                                                            echo esc_html( $categories[0]->name );   
+                                                        }
+                                                        ?> - <?php the_time( 'F j, Y' ); ?>
+                                                </figcaption>
+                                            </figure>
+                                            <h2><?php the_title(); ?></h2>
+                                            <?php the_excerpt(); ?>
+                                        </div>
 
+                            <?php
+                                    }
+                                    
+                                    /* Restore original Post Data */
+                                    wp_reset_postdata();
+                                } else {
+                                    // no posts found
+                                } 
+                            ?>      
 
-        <section class="news paddingSection">
-            <article class="container">
-                <h2 class="title title--white title--small text-md-right">Noticias</h2>
-                <div class="row mt-5">
-                    <div class="col-6">
-                        <div class="news__item">
-                            <figure>
-                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/news_brasil.png" alt="Brasil">
-                                <figcaption>Categoría - Sep 5</figcaption>
-                            </figure>
-                            <h2>Disponible la primera preventa</h2>
-                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                           
+                        </div>
+                        <div class="col-5 offset-1 news__item--right">
+                            <?php
+                                $args = array(
+                                    'post_type' => 'post',
+                                    'posts_per_page' => 2,
+                                    'offset' => 1
+                                    
+                                );
+                                // The Query
+                                $the_query = new WP_Query( $args );
+
+                                // The Loop
+                                if ( $the_query->have_posts() ) {
+                                    
+                                    while ( $the_query->have_posts() ) {
+                                        $the_query->the_post();
+                            ?>
+                                        <div class="news__item">
+                                            <figure>
+                                                <?php if ( has_post_thumbnail() ) : 
+                                                          the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']);
+                                                      endif;
+                                                ?>
+                                                <figcaption>
+                                                    <?php
+                                                        $categories = get_the_category();
+
+                                                        if ( ! empty( $categories ) ) {
+                                                            echo esc_html( $categories[0]->name );   
+                                                        }
+                                                    ?> - <?php the_time( 'F j, Y' ); ?>
+                                                </figcaption>
+                                            </figure>
+                                            <h2><?php the_title(); ?></h2>
+                                        </div>
+                            <?php
+                                    }
+                                    
+                                    /* Restore original Post Data */
+                                    wp_reset_postdata();
+                                } else {
+                                    // no posts found
+                                } 
+                            ?>                             
                         </div>
                     </div>
-                    <div class="col-5 offset-1 news__item--right">
-                        <div class="news__item">
-                            <figure>
-                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/news_colombia.png" alt="Brasil">
-                                <figcaption>Categoría - Sep 5</figcaption>
-                            </figure>
-                            <h2>Disponible la primera preventa</h2>
-                        </div>
-                        <div class="news__item">
-                            <figure>
-                                <img class="img-fluid" src="<?php bloginfo('template_directory');?>/assets/img/news_alexio.png" alt="Brasil">
-                                <figcaption>Categoría - Sep 5</figcaption>
-                            </figure>
-                            <h2>Disponible la primera preventa</h2>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        </section><!--End News-->
+                </article>
+            </section><!--End News-->
+        <?php endif; ?>
+        
+        
     </main>
 <?php get_footer(); ?>
     
