@@ -38,15 +38,21 @@
                     <span> </span>
                     <span> </span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div class="navbar-nav text-center">
-                        <a class="nav-item nav-link active" href="wp-festival.html">WP Festival</a>
-                        <a class="nav-item nav-link" href="djs.html">DJS</a>
-                        <a class="nav-item nav-link" href="presentaciones.html">Presentaciones</a>
-                        <a class="nav-item nav-link" href="blog.html">Blog</a>
-                        <a class="nav-item nav-link" href="contacto.html">Contacto</a>
-                    </div>
-                </div>
+                
+                <?php
+                    wp_nav_menu([
+                        
+                        'theme_location'  => 'header-menu',
+                        'container'       => 'div',
+                        'container_id'    => 'navbarNavAltMarkup',
+                        'container_class' => 'collapse navbar-collapse justify-content-end',
+                        'menu_id'         => false,
+                        'menu_class'      => 'navbar-nav text-center',
+                        'depth'           => 2,
+                        'fallback_cb'     => 'bs4navwalker::fallback',
+                        'walker'          => new bs4navwalker()
+                    ]);
+                ?>
             </nav>
         </div>
         <div class="container header__bottom">
