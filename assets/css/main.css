@@ -77,6 +77,14 @@ a{
         .blog__link:hover img{
             transform: scale(1.1);
         }
+    
+    .blog__navigation a{
+        text-decoration: none;
+        color:var(--main-bg-color);
+    }
+        .blog__navigation a:hover{
+            color: var(--main-bg-color-hover);
+        }
 
 .boxImage{
     border-width: 5px;
@@ -456,6 +464,12 @@ a{
     position:relative;
 }
 
+    .gallery__box{
+        max-width: 950px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
     .gallery__animation{
         font-family: var(--secundary-font-family);
         font-weight:600;
@@ -704,16 +718,38 @@ a{
     .presentations--inside{
         position:relative;
     }
-
-    .navbar-absolute{
-        background-color: rgba(9, 16, 44 ,1);
-        left: 0;
-        padding-bottom:20px;
-        padding-top:20px;
-        position: absolute;
-        right: 0;
-        top: 90px;
+    .page-template-template-presentations .presentations .title + p,
+    .page-template-template-presentations .presentations .title{
+        display: none;
     }
+
+    .page-template-template-presentations  .buyTicket {
+        background-color: var(--main-bg-color);
+    }
+
+    .page-template-template-presentations .buyTicket p {
+        color: var(--white-color);
+    }
+
+    .page-template-template-presentations .btn-primary,
+    .page-template-template-presentations .btn-primary:not(:disabled):not(.disabled):active,
+    .page-template-template-presentations .btn-primary:not(:disabled):not(.disabled).active,
+    .page-template-template-presentations .show>.btn-primary.dropdown-toggle {
+        background-color: var(--blue-color);
+        border-color: var(--blue-color);
+    }
+
+    
+
+.navbar-absolute{
+    background-color: rgba(9, 16, 44 ,1);
+    left: 0;
+    padding-bottom:20px;
+    padding-top:20px;
+    position: absolute;
+    right: 0;
+    top: 90px;
+}
 
 .navbar-expand-lg .navbar-nav .nav-link{
     border-bottom: 1px dashed var(--main-bg-color);
