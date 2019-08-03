@@ -455,7 +455,6 @@ a{
 .gallery{
     position:relative;
 }
-
     .gallery__animation{
         font-family: var(--secundary-font-family);
         font-weight:600;
@@ -510,6 +509,11 @@ a{
                     margin-top: 0;
                 }
             }
+        @media screen and (min-width:1400px){
+            .gallery__container{
+                max-width:1400px;
+            }
+        }
 
         
 
