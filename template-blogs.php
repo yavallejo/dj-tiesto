@@ -52,7 +52,7 @@
                                     <figure class="m-0">
                                         <a href="<?php the_permalink(  ); ?>" class="blog__link">
                                             <?php if ( has_post_thumbnail() ) :
-                                                the_post_thumbnail('full', ['class' => 'img-fluid']);
+                                                the_post_thumbnail('blog', ['class' => 'img-fluid']);
                                             endif; ?>
                                         </a>
                                     </figure>

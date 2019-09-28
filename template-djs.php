@@ -31,7 +31,7 @@
                                     <figure>
                                         <div class="djs__animation">
                                             <?php
-                                             the_post_thumbnail('full', ['class' => 'img-fluid']);
+                                             the_post_thumbnail('djs', ['class' => 'img-fluid']);
                                             ?>
                                             
                                             <a href="javascript:void(0);"></a>
@@ -57,7 +57,7 @@
                                                         <div class="col-md-6">
                                                             <figure class="boxImage">
                                                             <?php
-                                                                the_post_thumbnail('full', ['class' => 'img-fluid']);
+                                                                the_post_thumbnail('djs-modal', ['class' => 'img-fluid']);
                                                                 ?>
                                                             </figure>
                                                         </div>

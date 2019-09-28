@@ -64,7 +64,7 @@
                                             <li>
                                                 <figure>
                                                     <?php if ( has_post_thumbnail() ) : ?>
-                                                      <?php  the_post_thumbnail('full', ['class' => 'img-fluid']);?>
+                                                      <?php  the_post_thumbnail('djs', ['class' => 'img-fluid']);?>
                                                     <?php endif; ?>
                                                     <figcaption>
                                                         <h5 class="djs__name"><?php the_title();?></h5>
@@ -219,7 +219,7 @@
                                          <div class="news__item">
                                             <figure>
                                                 <?php if ( has_post_thumbnail() ) : 
-                                                          the_post_thumbnail('post-thumbnail', ['class' => 'img-fluid']);
+                                                          the_post_thumbnail('blog-home', ['class' => 'img-fluid']);
                                                       endif;
                                                 ?>                                                
                                                 <figcaption>

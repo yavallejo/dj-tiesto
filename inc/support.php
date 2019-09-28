@@ -28,9 +28,11 @@ add_theme_support( 'title-tag' );
 
 // Add image size
 
-add_image_size( 'sincortar', 220, 180 );
-add_image_size( 'cortar', 300, 300, true );
-add_image_size( 'cortarlefttop', 500, 500, array( 'right', 'bottom' ) );
+add_image_size( 'blog', 1070, 449, true );
+add_image_size( 'blog-home', 600, 650 , true);
+add_image_size( 'djs', 280, 350, true );
+add_image_size( 'djs-modal', 502, 628, true );
+
 
 
 // Include custom navwalker
