@@ -783,6 +783,85 @@ a {
     margin-right: 10px;
 }
 
+.lTickets {
+    background-color: var(--blue-color);
+    color: var(--white-color);
+    border-top: 10px solid #fd275f;
+}
+
+.lTickets__box {
+    margin-top: 70px;
+}
+
+.lTickets__itemData {
+}
+
+.lTickets__itemDataImage {
+    overflow: hidden;
+}
+
+.lTickets__itemDataImage img {
+    border-radius: 10px;
+}
+
+.lTickets__itemDataPrice {
+    font-size: 50px;
+    line-height: 79px;
+    font-weight: bold;
+    color: #f2f2f2;
+    text-align: center;
+}
+
+.lTickets__itemNav {
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--white-color);
+    margin-bottom: 48px;
+    color: var(--blue-color);
+    text-align: center;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.lTickets__itemNav:last-child {
+    margin-bottom: 0;
+}
+
+.lTickets__right .nav-link.active,
+.lTickets__right .show > .nav-link {
+    background-color: var(--white-color);
+    border-top: 10px solid var(--main-bg-color);
+    color: var(--blue-color);
+}
+
+.lTickets__itemNav--title {
+    font-size: 25px;
+    line-height: 39px;
+    color: var(--blue-color);
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.lTickets__itemNav--description {
+    max-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 23px;
+    margin-bottom: 23px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 25px;
+    color: var(--gray-color);
+}
+
+.lTickets__itemNav--link {
+    color: var(--main-bg-color);
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 27px;
+}
+
 .paddingSection {
     padding-bottom: var(--padding-section);
     padding-top: var(--padding-section);
@@ -1099,6 +1178,75 @@ a {
     }
 }
 
+/* Switch night - sun */
+
+.showLive__night {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    position: relative;
+    min-height: 96px;
+}
+
+.showLive__night--box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.showLive__night--boxLabel {
+    position: relative;
+    display: block;
+    width: 180px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: #000839;
+    overflow: hidden;
+    cursor: pointer;
+}
+.showLive__night--boxLabel:before,
+.showLive__night--boxLabel:after {
+    display: block;
+    position: absolute;
+    content: "";
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    top: 14px;
+    left: 14px;
+    -webkit-transition: 0.5s ease;
+    transition: 0.5s ease;
+}
+.showLive__night--boxLabel:before {
+    background-color: #ffa41b;
+}
+.showLive__night--boxLabel:after {
+    background-color: #000839;
+    left: -58px;
+    -webkit-transform: scale(0.00001);
+    transform: scale(0.00001);
+}
+
+.showLive__night--boxInput {
+    display: none;
+}
+.showLive__night--boxInput:checked + .showLive__night--boxLabel:before {
+    background-color: #fff;
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+}
+.showLive__night--boxInput:checked + .showLive__night--boxLabel:after {
+    -webkit-transform: translateX(120px) scale(1);
+    transform: translateX(120px) scale(1);
+}
+
 .showLive__item {
     border-top: 2px solid #c4c4c4;
     padding-top: 38px;
@@ -1265,6 +1413,10 @@ a {
     .title:after {
         margin-left: 0;
     }
+}
+
+.title--borderNone:after {
+    display: none;
 }
 
 .title--white {

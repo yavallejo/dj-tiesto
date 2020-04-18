@@ -49,6 +49,14 @@
                 <h3 class="title--page showLive--title">TOCANDO EN VIVO !!</h3>
                 <h6 class="showLive--subtitle">Cambia entre el dia y la noche para ver las presentaciones </h6>
             </div>
+
+            <div class="showLive__night">
+                <div class="showLive__night--box">		
+                    <input class="showLive__night--boxInput" type="checkbox" id="toggle"/>
+                    <label class="showLive__night--boxLabel" for="toggle"></label>
+                </div>
+            </div>
+
             <div class="row justify-content-center">
                 <div class="col-md-10 showLive__item">
                     <div class="showLive__box">
@@ -149,6 +157,69 @@
                     </div>
                 </div>
             </div>
+        </section><!--ShowLive-->
+
+        <section class="lTickets paddingSection">
+            <h3 class="title title--white title--borderNone text-center">Tickets</h3>
+
+            <div class="container lTickets__box">
+                <div class="row">
+                    <div class="tab-content col-6 lTickets__left" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active lTickets__itemData" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <figure class="lTickets__itemDataImage">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tabs-tickets.jpg" alt="" class="img-fluid">
+                                <figcaption class="lTickets__itemDataPrice">$ 200</figcaption>
+                            </figure>
+                        </div>
+                        <div class="tab-pane fade lTickets__itemData" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <figure class="lTickets__itemDataImage">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tabs-tickets.jpg" alt="" class="img-fluid">
+                                <figcaption class="lTickets__itemDataPrice">$ 400</figcaption>
+                            </figure>
+                        </div>
+                        <div class="tab-pane fade lTickets__itemData" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                            <figure class="lTickets__itemDataImage">
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/tabs-tickets.jpg" alt="" class="img-fluid">
+                                <figcaption class="lTickets__itemDataPrice">$ 100</figcaption>
+                            </figure>
+                        </div>
+                        
+                    </div>
+
+                    <div class="nav flex-column nav-pills col-5 offset-1 lTickets__right" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <div class="nav-link active lTickets__itemNav"
+                           id="v-pills-home-tab"
+                           data-toggle="pill"
+                           href="#v-pills-home"
+                           role="tab"
+                           aria-controls="v-pills-home"
+                           aria-selected="true">
+                           
+                           <h5 class="lTickets__itemNav--title">General - Escenario Principal</h5>
+                           <p class="lTickets__itemNav--description">Ubicación general en el escenario principal, nivel del suelo.</p>
+                           <a href="https://www.aprendiendoando.com/" class="lTickets__itemNav--link" target="_blank">Comprar Tickets</a>
+                        </div>
+                       
+                       <div class="nav-link lTickets__itemNav" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                        
+                            <h5 class="lTickets__itemNav--title">Escenerario secundario</h5>
+                           <p class="lTickets__itemNav--description">Ubicación general en el escenario principal, nivel del suelo.</p>
+                           <a href="https://www.aprendiendoando.com/" class="lTickets__itemNav--link" target="_blank">Comprar Tickets</a>
+                        
+                        </div>
+                        <div class="nav-link lTickets__itemNav" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                            <h5 class="lTickets__itemNav--title">VIP</h5>
+                           <p class="lTickets__itemNav--description">Ubicación general en el escenario principal, nivel del suelo.</p>
+                           <a href="https://www.aprendiendoando.com/" class="lTickets__itemNav--link" target="_blank">Comprar Tickets</a>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
         </section>
+
+        
     </main>
 <?php get_footer('landing'); ?>
